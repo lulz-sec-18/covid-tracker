@@ -37,3 +37,9 @@ countryForm.addEventListener('submit',e => {
         .then(data => updateUI(data))
         .catch(err => console.log(err));
 })
+
+$(document).scroll(function(){
+    $('.navbar').toggleClass('scrolled', $(this).scrollTop() > $('.navbar').height())
+  });
+  
+  

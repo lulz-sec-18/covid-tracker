@@ -10,14 +10,42 @@
   <title>COVID TRACKER</title>
 </head>
 <body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="#">
+        <img src="assets/covid-logo.png" width="64" height="54" alt="">
+      </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-lg-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#WorldStats">World Stats</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#IndiaStats">India Stats</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#Precautions">Precautions</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#About">About</a>
+                </li>
+                
+                  </div>
+                </li>
+                
+              </ul>
+              
+            </div>
+          </nav> 
+</header>
 
-<ul>
-  <li><a href="#About">About</a></li>
-  <li><a href="#Precautions">Precautions</a></li>
-  <li><a href="#IndiaStats">India's Stats</a></li>
-  <li><a href="#WorldStats">World Stats</a></li>
-  <li><a href="#Home">Home</a></li>
-</ul>
 
 <!-- HOME -->
 
@@ -91,6 +119,7 @@
 </div>
 
 <!-- SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 <script src="scripts/worldData.js"></script>
 <script src="scripts/indiaData.js"></script>
