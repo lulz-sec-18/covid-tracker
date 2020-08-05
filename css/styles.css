@@ -39,7 +39,7 @@ html {
   background-size: 100% 100%;
 }
 #About {
-  height: 500px;
+  height: 1000px;
   border: 2px solid black;
   padding: 25px;
   background-image: url("../assets/About.jpg"); 
@@ -64,7 +64,7 @@ header
 {
     background: transparent !important;
     transition: 0.5s;
-    height: 12%;
+    height: 8%;
 }
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link
 {
@@ -102,38 +102,5 @@ header
 .navbar-light .navbar-nav .active>.nav-link:hover
 {
     color: #000;
-}
-
-
-/*
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #121622;
-  position: sticky; 
-  top: 0;
-}
-
-li {
-  float: right;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: right;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color:green;
-}
-
-.active {
-  background-color: #4CAF50;
 }
 
