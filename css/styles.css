@@ -1,13 +1,25 @@
 
 .container{
-  max-width: 400px;
+  max-width: 800px;
 }
 html {
   scroll-behavior: smooth ;
 }
+.table{
+  color: white;
+}
+
+.container {
+  font-size: 20px;
+  border-radius: 5%;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.6); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  padding: 20px;
+}
 
 #Home {
-  height: 1000px;
+  height: 720px;
   border: 2px solid black;
   padding: 25px;
   background-image: url("../assets/bg.jpg"); 
@@ -15,23 +27,21 @@ html {
   background-size: 100% 100%;
 }
 #WorldStats {
-  height: 700px;
+  height: 720px;
   border: 2px solid black;
   padding: 25px;
-  background-image: url("../assets/globe.jpg"); 
-  background-repeat: no-repeat;
+  background-color: teal;
   background-size: 100% 100%;
 }
 #IndiaStats {
-  height: 1000px;
+  height: 720px;
   border: 2px solid black;
   padding: 25px;
-  background-image: url("../assets/India.jpg"); 
-  background-repeat: no-repeat;
+  background-color: #F8F800;
   background-size: 100% 100%;
 }
 #Precautions {
-  height: 1000px;
+  height: 720px;
   border: 2px solid black;
   padding: 25px;
   background-image: url("../assets/Precautions.jpg"); 
@@ -39,7 +49,7 @@ html {
   background-size: 100% 100%;
 }
 #About {
-  height: 1000px;
+  height: 720px;
   border: 2px solid black;
   padding: 25px;
   background-image: url("../assets/About.jpg"); 
