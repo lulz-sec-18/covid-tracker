@@ -961,3 +961,9 @@ a.white {
 		  }
 
 		  /*search*/
+.cards-2 .card .card-body:hover {
+	
+	background: #dff8fc;
+	transition: all 0.3s;
+	
+}
