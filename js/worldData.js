@@ -10,6 +10,7 @@ const getCountry = async(country) => {
     return data;
 
 };
+//number wuth commas and font-sizing
 
 function numberWithCommas(x) {
     x = x.toString();
