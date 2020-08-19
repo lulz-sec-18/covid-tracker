@@ -550,6 +550,9 @@ a.white {
 		box-shadow: none;
         background: transparent;
 	}
+	.navbar-collapse{
+		background: #fff;
+	}
 	
 	.navbar-custom .navbar-nav {
 		margin-top: 0;
