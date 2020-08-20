@@ -914,8 +914,8 @@ a.white {
 	width: 130px;
 	height:100px;
 	position: absolute;
-	top:110%;
-	left:25%;
+	top:105%;
+	left:55%;
 	transform: translate(-50%, -50%);
 	}
 	
@@ -1086,6 +1086,7 @@ a.white {
 body.dark-theme {
 	color: #eee;
 	background: #121212;
+	
   }
 
 body.dark-theme .header, body.dark-theme .navbar-custom,
@@ -1095,6 +1096,7 @@ body.dark-theme .card-body
 {
 	background-color: #000;
 	transition: 0ms !important;
+	transition: 0.3s;
 }
 body.dark-theme .card-body:hover{
 	background-color:#121212 ;
@@ -1104,17 +1106,21 @@ body.dark-theme .card-body:hover{
 body.dark-theme .navbar-custom .nav-item .nav-link,
 body.dark-theme .navbar-custom .nav-item .nav-link:hover,
 body.dark-theme .navbar-custom .nav-item .nav-link:active{
-	color: #000;
+	color: #000;transition: 0.3s;
+
 }
 
 body.dark-theme .navbar-custom.top-nav-collapse .nav-item .nav-link {
 	color: #fff !important;
 	opacity: 1;
+	
 }
 
 body.dark-theme .navbar-custom.top-nav-collapse .nav-item .nav-link:hover,
 body.dark-theme .navbar-custom.top-nav-collapse .nav-item .nav-link.active {
 	color: #00bfd8;
+	
+
 }
 body.dark-theme .cards-2 .card .card-body:hover {
 	
@@ -1129,5 +1135,10 @@ body.dark-theme h5,body.dark-theme h6,
 body.dark-theme .p-large{
 
 	color: #dadada;
+	transition: 0.3s;
+}
+.show{
+	background-color: #fff;
+	transition: none;
 }
   
