@@ -22,4 +22,20 @@ const btn = document.querySelector('.btn-toggle');
 btn.addEventListener('click', function() {
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');  
+
+//logo text color change in dark mode
 })
+$(document).ready(function(){
+  var flag = 0;  
+  $("input.btn-toggle").click(function(){
+    if(flag == 0) {
+      $(".logo-src").attr("src","images/logo.svg");
+      flag = 1;
+    }
+    else if(flag == 1) {
+      $(".logo-src").attr("src","images/logo_white.svg");
+      flag = 0;
+    }
+  });
+});
+

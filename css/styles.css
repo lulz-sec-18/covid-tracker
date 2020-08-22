@@ -264,8 +264,14 @@ a.white {
 }
 
 .navbar-custom .navbar-brand.logo-image img {
-    width: 7.4375rem;
-	height: 2rem;
+	width: 10.4125rem;
+	height: 2.8rem;
+	transition: 0.3s;
+}
+.navbar-custom .navbar-brand.logo-image img:hover {
+    width: 11.15625rem;
+	height: 3rem;
+	transition: 0.3s;
 }
 
 .navbar-custom .navbar-brand.logo-text {
@@ -561,6 +567,8 @@ a.white {
 /*****************************/	
 /* Min-width width 768px */
 @media (min-width: 768px) {
+
+
 	
 	/* General Styles */
 	.p-heading {
@@ -618,9 +626,10 @@ a.white {
 
 	.navbar-custom .nav-item .nav-link {
 		padding: 0.25rem 0.75rem 0.25rem 0.75rem;
-		color: #fff;
+		color: #000;
 		opacity: 0.8;
 	}
+	
 	
 	.navbar-custom .nav-item .nav-link:hover,
 	.navbar-custom .nav-item .nav-link.active {
@@ -638,6 +647,8 @@ a.white {
 		color: #393939;
 		opacity: 1;
 	}
+	
+
 	
 	.navbar-custom.top-nav-collapse .nav-item .nav-link:hover,
 	.navbar-custom.top-nav-collapse .nav-item .nav-link.active {
@@ -1103,10 +1114,10 @@ body.dark-theme .card-body:hover{
 
 }
 
-body.dark-theme .navbar-custom .nav-item .nav-link,
+
 body.dark-theme .navbar-custom .nav-item .nav-link:hover,
 body.dark-theme .navbar-custom .nav-item .nav-link:active{
-	color: #000;transition: 0.3s;
+	color: #fff;transition: 0.3s;
 
 }
 
@@ -1117,7 +1128,7 @@ body.dark-theme .navbar-custom.top-nav-collapse .nav-item .nav-link {
 }
 
 body.dark-theme .navbar-custom.top-nav-collapse .nav-item .nav-link:hover,
-body.dark-theme .navbar-custom.top-nav-collapse .nav-item .nav-link.active {
+body.dark-theme .navbar-custom.top-nav-collapse .nav-item .nav-link:active {
 	color: #00bfd8;
 	
 
