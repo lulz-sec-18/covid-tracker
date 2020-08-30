@@ -6,7 +6,7 @@
 
 
     <!-- Website Title -->
-    <title>coviTrack</title>
+    <title>CoviTrax</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
@@ -19,7 +19,7 @@
 	<!-- Favicon  -->
     <link rel="icon" href="images/covid--logo.svg">
 </head>
-<body data-spy="scroll" data-target=".fixed-top" class="dark-theme || light-theme">
+<body data-spy="scroll" data-target=".fixed-top" class="light-theme || dark-theme">
     
     <!-- Preloader -->
 	<div class="spinner-wrapper">
@@ -55,20 +55,18 @@
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#Home">Home<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#Precautions">Precautions</a>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#WorldStats">WorldStats</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#IndiaStats">IndiaStats</a>
                 </li>
-               
+               <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#Precautions">Precautions</a>
+                </li>
 
-               
-                <!-- end of dropdown menu -->
-
+                
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#About">About</a>
                 </li>
@@ -104,7 +102,7 @@
 
 <div class="worldstats" id="WorldStats">
     <div class="stats-head">
-        <h1 class="countrystat-head" style="text-align: center;">Search For Country</h1>
+        <h1 class="countrystat-head" style="text-align: center; margin-bottom:-10%;">Search For Country</h1>
     </div>
 
     <form class="search__container change-location my-4 text-center text-muted" id="form1">
@@ -116,7 +114,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     
-               <hr><h2>COUNTRY NAME</h2><hr>
+               <hr class="title-divider"><h2>COUNTRY NAME</h2><hr class="title-divider">
                     
                 </div> 
             </div> 
@@ -129,9 +127,9 @@
                             <div class="card-title">CASES</div>
                             
                             <hr class="cell-divide-hr">
-                            <div class="price">
+                            <div class="numbers">
                                 <span class="value">N/A</span>
-                                <div class="frequency"></div>
+                            
                             </div>
                             <hr class="cell-divide-hr">
                             
@@ -146,9 +144,9 @@
                         <div class="card-title">ACTIVE</div>
                         
                         <hr class="cell-divide-hr">
-                        <div class="price">
+                        <div class="numbers">
                             <span class="value">N/A</span>
-                            <div class="frequency"></div>
+                        
                         </div>
                         <hr class="cell-divide-hr">
                         
@@ -163,9 +161,9 @@
                         <div class="card-title">RECOVERED</div>
                         
                         <hr class="cell-divide-hr">
-                        <div class="price">
+                        <div class="numbers">
                             <span class="value">N/A</span>
-                            <div class="frequency"></div>
+                        
                         </div>
                         <hr class="cell-divide-hr">
                         
@@ -179,9 +177,9 @@
                         <div class="card-title">DEATHS</div>
                         
                         <hr class="cell-divide-hr">
-                        <div class="price">
+                        <div class="numbers">
                             <span class="value">N/A</span>
-                            <div class="frequency"></div>
+                        
                         </div>
                         <hr class="cell-divide-hr">
                         
@@ -195,9 +193,9 @@
                         <div class="card-title">TODAY+</div>
                         
                         <hr class="cell-divide-hr">
-                        <div class="price">
+                        <div class="numbers">
                             <span class="value">N/A</span>
-                            <div class="frequency"></div>
+                        
                         </div>
                         <hr class="cell-divide-hr">
                         
@@ -219,7 +217,7 @@
 
 <div class="indiastats" id="IndiaStats">
     <div class="stats-head">
-        <h1 class="countrystat-head" style="text-align: center;">Search For Indian State/City</h1>
+        <h1 class="countrystat-head" style="text-align: center;  margin-bottom:-10%;">Search For Indian State/City</h1>
     </div>
 
     <form class="search__container change-location my-4 text-center text-muted" id="form2">
@@ -231,7 +229,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     
-                <hr><h2>STATE/CITY NAME</h2><hr>
+                <hr class="title-divider"><h2>STATE/CITY NAME</h2><hr class="title-divider">
                     
                 </div> 
             </div> 
@@ -244,9 +242,9 @@
                             <div class="card-title">CASES</div>
                             
                             <hr class="cell-divide-hr">
-                            <div class="price">
+                            <div class="numbers">
                                 <span class="value">N/A</span>
-                                <div class="frequency"></div>
+                            
                             </div>
                             <hr class="cell-divide-hr">
                             
@@ -261,9 +259,9 @@
                         <div class="card-title">ACTIVE</div>
                         
                         <hr class="cell-divide-hr">
-                        <div class="price">
+                        <div class="numbers">
                             <span class="value">N/A</span>
-                            <div class="frequency"></div>
+                        
                         </div>
                         <hr class="cell-divide-hr">
                         
@@ -278,9 +276,9 @@
                         <div class="card-title">RECOVERED</div>
                         
                         <hr class="cell-divide-hr">
-                        <div class="price">
+                        <div class="numbers">
                             <span class="value">N/A</span>
-                            <div class="frequency"></div>
+                        
                         </div>
                         <hr class="cell-divide-hr">
                         
@@ -294,9 +292,9 @@
                         <div class="card-title">DEATHS</div>
                         
                         <hr class="cell-divide-hr">
-                        <div class="price">
+                        <div class="numbers">
                             <span class="value">N/A</span>
-                            <div class="frequency"></div>
+                        
                         </div>
                         <hr class="cell-divide-hr">
                         

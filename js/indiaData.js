@@ -47,9 +47,9 @@ Details.innerHTML = `
             <div class="card-title">CASES</div>
             
             <hr class="cell-divide-hr">
-            <div class="price">
+            <div class="numbers">
                 <span class="value">${numberWithCommas(obj.confirmed)}</span>
-                <div class="frequency"></div>
+                
             </div>
             <hr class="cell-divide-hr">
             
@@ -64,9 +64,9 @@ Details.innerHTML = `
         <div class="card-title">ACTIVE</div>
         
         <hr class="cell-divide-hr">
-        <div class="price">
+        <div class="numbers">
             <span class="value">${numberWithCommas(obj.active)}</span>
-            <div class="frequency"></div>
+            
         </div>
         <hr class="cell-divide-hr">
         
@@ -81,9 +81,9 @@ Details.innerHTML = `
         <div class="card-title">RECOVERED</div>
         
         <hr class="cell-divide-hr">
-        <div class="price">
+        <div class="numbers">
             <span class="value">${numberWithCommas(obj.recovered)}</span>
-            <div class="frequency"></div>
+            
         </div>
         <hr class="cell-divide-hr">
         
@@ -97,9 +97,9 @@ Details.innerHTML = `
         <div class="card-title">DEATHS</div>
         
         <hr class="cell-divide-hr">
-        <div class="price">
+        <div class="numbers">
             <span class="value">${numberWithCommas(obj.deaths)}</span>
-            <div class="frequency"></div>
+            
         </div>
         <hr class="cell-divide-hr">
         

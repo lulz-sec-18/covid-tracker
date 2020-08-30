@@ -22,9 +22,9 @@ function numberWithCommas(x) {
 
 function checkSize(x){
     if(x>999999)
-         return "3.1rem";
+         return "2.2rem";
     else
-        return "3.5rem";
+        return "2.5rem";
 
 }
 
@@ -50,9 +50,9 @@ const updateUI = (data) => {
                 <div class="card-title">CASES</div>
                 
                 <hr class="cell-divide-hr">
-                <div class="price">
+                <div class="numbers">
                     <span class="value" style="font-size:${checkSize(countryDets.cases)};">${numberWithCommas(countryDets.cases)}</span>
-                    <div class="frequency"></div>
+                    
                 </div>
                 <hr class="cell-divide-hr">
                 
@@ -67,9 +67,9 @@ const updateUI = (data) => {
             <div class="card-title">ACTIVE</div>
             
             <hr class="cell-divide-hr">
-            <div class="price">
+            <div class="numbers">
                 <span class="value"  style="font-size:${checkSize(countryDets.active)};">${numberWithCommas(countryDets.active)}</span>
-                <div class="frequency"></div>
+                
             </div>
             <hr class="cell-divide-hr">
             
@@ -84,9 +84,9 @@ const updateUI = (data) => {
             <div class="card-title">RECOVERED</div>
             
             <hr class="cell-divide-hr">
-            <div class="price">
+            <div class="numbers">
                 <span class="value" style="font-size:${checkSize(countryDets.recovered)};">${numberWithCommas(countryDets.recovered)}</span>
-                <div class="frequency"></div>
+                
             </div>
             <hr class="cell-divide-hr">
             
@@ -100,9 +100,9 @@ const updateUI = (data) => {
             <div class="card-title">DEATHS</div>
             
             <hr class="cell-divide-hr">
-            <div class="price">
+            <div class="numbers">
                 <span class="value" style="font-size:${checkSize(countryDets.deaths)};">${numberWithCommas(countryDets.deaths)}</span>
-                <div class="frequency"></div>
+                
             </div>
             <hr class="cell-divide-hr">
             
@@ -116,9 +116,9 @@ const updateUI = (data) => {
             <div class="card-title">TODAY+</div>
             
             <hr class="cell-divide-hr">
-            <div class="price">
+            <div class="numbers">
                 <span class="value" style="font-size:${checkSize(countryDets.todayCases)};">${numberWithCommas(countryDets.todayCases)}</span>
-                <div class="frequency"></div>
+                
             </div>
             <hr class="cell-divide-hr">
             
