@@ -34,7 +34,7 @@ Details.innerHTML = `
 <div class="row">
 <div class="col-lg-12">
     
-<h2>${state.toUpperCase()}</h2>
+<hr class="title-divider"><h2>${state.toUpperCase()}</h2> <hr class="title-divider">
     
 </div> 
 </div> 

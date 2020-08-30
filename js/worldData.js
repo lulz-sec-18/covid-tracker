@@ -37,7 +37,7 @@ const updateUI = (data) => {
     <div class="row">
     <div class="col-lg-12">
         
-    <h2>${(countryDets.country).toUpperCase()}</h2>
+    <hr class="title-divider"><h2>${(countryDets.country).toUpperCase()}</h2> <hr class="title-divider">
         
     </div> 
 </div> 

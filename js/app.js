@@ -1,3 +1,4 @@
+
 //   navbar scroll behaviour
 
 $(document).scroll(function(){
@@ -38,4 +39,6 @@ $(document).ready(function(){
     }
   });
 });
+
+
 
