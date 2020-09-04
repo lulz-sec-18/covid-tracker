@@ -552,6 +552,9 @@ hr.title-divider{
 /*     Media Queries     */
 /*****************************/	
 /* Min-width width 768px */
+
+
+
 @media (min-width: 768px) {
 
 
@@ -587,24 +590,16 @@ hr.title-divider{
 	}
 	/* end of precaution */
 
-	
+	.container-card{
+
+	}
+
 }
 /* end of min-width width 768px */
 
-@media (max-width: 992px){
-	.navbar-custom .nav-item .nav-link {
-		padding: 0.25rem 0.75rem 0.25rem 0.75rem;
-		color: #000;
-		opacity: 0.8;
-	}
-	body.dark-theme .navbar-custom .nav-item .nav-link {
-		padding: 0.25rem 0.75rem 0.25rem 0.75rem;
-		color: #fff;
-		opacity: 0.8;
-	}
 
-	
-}
+
+
 
 
 /* Min-width width 992px */
@@ -623,6 +618,7 @@ hr.title-divider{
 	.navbar-custom .navbar-nav {
 		margin-top: 0;
 		margin-bottom: 0;
+		margin-right: -5%;
 	}
 
 	.navbar-custom .nav-item .nav-link {
@@ -1234,16 +1230,17 @@ h1.Form-tittle {
 	margin: 0;
 }
 
+
 h2 {
 	text-align: center;
 }
 
-p {
-	font-size: 14px;
+p.popup-phrase {
+	font-size:0.9rem;
 	font-weight: 100;
 	line-height: 20px;
 	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
+	margin: 5% 0 7.5%;
 }
 
 span.form-bottom-title {
@@ -1252,17 +1249,17 @@ span.form-bottom-title {
 
 a.popup-links {
 	color: #333;
-	font-size: 14px;
+	font-size: 0.9rem;
 	text-decoration: none;
-	margin: 15px 0;
+	margin: 4% 0;
 }
 
 button.popup-button {
-	border-radius: 20px;
+	border-radius: 10%;
 	border: 1px solid #00bfd8;
 	background-color: #00bfd8;
 	color: #FFFFFF;
-	font-size: 12px;
+	font-size: 0.8rem;
 	font-weight: bold;
 	padding: 12px 45px;
 	letter-spacing: 1px;
@@ -1289,7 +1286,7 @@ form.login-form {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 0 50px;
+	padding: 0 3rem;
 	height: 100%;
 	text-align: center;
 }
@@ -1311,7 +1308,8 @@ input.popup-form {
 	overflow: hidden;
 	width: 768px;
 	max-width: 100%;
-	min-height: 480px;
+	min-height: 380px;
+	
 }
 
 .form-container {
@@ -1449,6 +1447,7 @@ input.popup-form {
 	justify-items: center;
 	transition: all 0.5s;
 	transition: ease-in-out;
+	overflow: auto;
 }
 .close{
 	position: absolute;
