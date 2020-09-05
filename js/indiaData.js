@@ -1,3 +1,4 @@
+
 const stateForm = document.getElementById('form2');
 const Details = document.getElementById('details2');
 
@@ -137,3 +138,6 @@ stateForm.addEventListener('submit',e => {
         .catch(err => console.log(err));
 
 })
+
+
+

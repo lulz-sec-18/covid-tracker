@@ -1,6 +1,8 @@
 const countryForm = document.getElementById('form1');
 const details = document.getElementById('details1');
 
+var countryDets = {};
+
 const getCountry = async(country) => {
     
     const base = 'https://disease.sh/v3/covid-19/countries/';
@@ -31,7 +33,7 @@ function checkSize(x){
 
 const updateUI = (data) => {
 
-    const countryDets = data.countryDets;
+    var countryDets = data.countryDets;
     console.log(countryDets);
     details.innerHTML = `
     <div class="row">
@@ -130,6 +132,37 @@ const updateUI = (data) => {
 
     </div> <!-- end of col -->
 </div> <!-- end of row -->`;  
+
+var chart = new CanvasJS.Chart("chartContainer", {
+    animationEnabled: true,
+    title: {
+      text: "Country Wise Census"
+    },
+    theme: "dark2"
+    ,
+    axisX: {
+      interval: 1
+    },
+    axisY: {
+      title: "Cases",
+      includeZero: true,
+  
+    },
+    data: [{
+            type: "bar",
+            toolTipContent: "<b>{label}</b><br>{y}}",
+            dataPoints: [
+              { label: "Cases", y: countryDets.cases},
+              { label: "Active", y: countryDets.active},
+              { label: "Recovered", y: countryDets.recovered},
+              { label: "Deaths", y: countryDets.deaths},
+              { label: "Today", y: countryDets.todayCases},
+            ]
+          }]
+        });
+        chart.render();
+
+
 };
 
 
@@ -155,6 +188,10 @@ countryForm.addEventListener('submit',e => {
         .catch(err => console.log(err));
 })
 
+window.onload = function () {
+   
+    
+}
 
 
 // remember to add this placeholder afterwards
