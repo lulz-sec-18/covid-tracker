@@ -1151,6 +1151,9 @@ body.dark-theme .p-large{
 	background-color: #fff;
 	transition: none;
 }
+body.dark-theme .india-graph{
+	border: 2px double #dadada;
+}
 
 /**********************/
 /*     Footer     */
@@ -1481,3 +1484,13 @@ input.popup-form {
 .close.sign-in{
 	right: 2%;
 }
+
+/*India Graph*/
+
+.india-graph{
+	margin-left: 20%;
+	margin-right: 18%;
+	border: 2px double black;
+	padding: 2%;
+}
+

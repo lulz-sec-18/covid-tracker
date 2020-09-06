@@ -31,14 +31,16 @@ var flag = 0;
 $("input.btn-toggle").click(function(){
   if(flag == 0) {
     $(".logo-src").attr("src","images/logo.svg");
-    flag = 1;
+    flag = 0;
   }
   else if(flag == 1) {
     $(".logo-src").attr("src","images/logo_white.svg");
-    flag = 0;
+    flag =1;
   }
 });
 });
+
+
 
 /*form display class toggle*/
 
