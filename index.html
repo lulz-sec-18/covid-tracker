@@ -9,7 +9,10 @@
     <title>CoviTrax</title>
     
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/fontawesome-all.css" rel="stylesheet">
@@ -21,7 +24,7 @@
 	<!-- Favicon  -->
     <link rel="icon" href="images/covid--logo.svg">
 </head>
-<body data-spy="scroll" data-target=".fixed-top" class="light-theme">
+<body data-spy="scroll" data-target=".fixed-top" class="light-theme || dark-theme">
     
     <!-- Preloader -->
 	<div class="spinner-wrapper">
@@ -55,8 +58,9 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="#Home">Home<span class="sr-only">(current)</span></a>
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#WorldStats">WorldStats</a>
                 </li>
@@ -66,11 +70,13 @@
                <li class="nav-item">
                     <a class="nav-link page-scroll" href="#Precautions">Precautions</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#About">About</a>
-                </li> -->
+
+                
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#loginform" id="button" >Login</a>
+                    <a class="nav-link page-scroll" href="#About">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" id="button" class="nav-link page-scroll">Login</a>
                 </li>
             </ul>
             
@@ -103,8 +109,7 @@
     <!-- end of header -->
 
     <!--   POpup Form  -->
-
-    <div class="popup animate__animated animate__pulse" id="loginform">
+    <div class="popup animate__animated animate__pulse">
         <div class="container-card" id="container">
         <div class="form-container sign-up-container">
             <form action="#" class="login-form">
@@ -155,15 +160,10 @@
         </div>
     </div>
     </div>
+
+
     
 <!--End of popup form-->
-
-<!-- worldstats -->
-
-<!-- html for country graph -->
-<!--<div id="chartContainer" style="height: 370px; width: 50%;">
-</div>-->
-
 
 <div class="worldstats" id="WorldStats">
     <div class="stats-head">
@@ -280,12 +280,6 @@
 </div>
 <hr style="width: 100%; height: 3px;">
 
-<!-- end of worldstats -->
-
-<!-- IndiaStats -->
-
-
-
 <div class="indiastats" id="IndiaStats">
     <div class="stats-head">
         <h1 class="countrystat-head" style="text-align: center;  margin-bottom:-10%;">Search For Indian State/City</h1>
@@ -379,14 +373,12 @@
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-        <div class="india-graph">
-            <div id="chartcoontainer" style="height: 370px; width: 74%;"></div>
-        </div>
     </div> <!-- end of cards-2 -->
+    <hr class="title-divider"><h3 style="text-align:center;">INDIAN COVID GRAPH</h3><hr class="title-divider">
 
- 
-
-    <!-- end of indiastats -->
+    <div class="india-graph">
+        <div id="chartcoontainer" ></div>
+    </div>
 
      <!-- precautions -->
      <div id="Precautions" class="basic-4">
@@ -451,11 +443,13 @@
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
+    </div> <!-- end of basic-4 -->
+    <!-- end of precautions -->
 
+</div>
 
-        
-    <!-- Footer -->
-<div class="footer" id="footer">
+<!-- Footer -->
+<div class="footer" id="About">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -519,19 +513,6 @@
     </div> <!-- end of container -->
 </div> <!-- end of footer -->  
 <!-- end of footer -->
-
-    </div
-    > <!-- end of basic-4 -->
-    <!-- end of precautions -->
-
-
-</div>
-
-   <!-- html for indian graph -->
-
-   <div id="chartcoontainer" style="height: 370px; width: 50%;"></div>
-
-
 
    
     <!-- Scripts -->

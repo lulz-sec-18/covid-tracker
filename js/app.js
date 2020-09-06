@@ -10,10 +10,10 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
 if (prevScrollpos > currentScrollPos) {
-  document.getElementById("navbar").style.top = "0";
+  document.getElementsByClassName("navbar").style.top = "0";
 } else {
-  document.getElementById("navbar").style.top = "-60px";
-  document.getElementById("navbar").style.transition = "1s";
+  document.getElementsByClassName("navbar").style.top = "-60px";
+  document.getElementsByClassName("navbar").style.transition = "1s";
 }
 prevScrollpos = currentScrollPos;
 }
@@ -31,16 +31,14 @@ var flag = 0;
 $("input.btn-toggle").click(function(){
   if(flag == 0) {
     $(".logo-src").attr("src","images/logo.svg");
-    flag = 0;
+    flag = 1;
   }
   else if(flag == 1) {
     $(".logo-src").attr("src","images/logo_white.svg");
-    flag =1;
+    flag = 0;
   }
 });
 });
-
-
 
 /*form display class toggle*/
 

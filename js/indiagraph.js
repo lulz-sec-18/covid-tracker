@@ -15,7 +15,7 @@ if($('.btn-toggle').hasClass("dark-theme")){
          bgc = "#fffff";
          fc = "#000000";
     }
-$(document).ready(function () {
+window.onload = function () {
 
     var bgc;
     var fc;
@@ -147,5 +147,5 @@ $(document).ready(function () {
         
     
     
-    });
+    }
 
