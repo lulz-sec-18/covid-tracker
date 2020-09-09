@@ -1480,3 +1480,54 @@ input.popup-form {
 	height: 370px;
 	width: 100%;
 }
+.world-graph{
+	margin-left: 20%;
+	margin-right: 18%;
+	border: 2px double black;
+	padding: 1%;
+}
+#chartContainer{
+	height: 370px;
+	width: 100%;
+}
+
+/*notification*/
+
+.notification{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	background: #00bfd8;
+	box-shadow: 0px 10px 25px 0px rgba(27, 92, 255, .2);
+	margin: 20px;
+	padding: 10px 20px;
+	border-radius: 20px 8px 20px 20px;
+	color: #fff;
+	visibility: hidden;
+	transition: all .3s ease;
+	transform: translate(100%);
+	width: calc(100% - 40px);
+	max-width: 400px;
+}
+.notification p.noti-body {
+	font-size: .85rem;
+	opacity: .7;
+	color: #fff !important;
+	font-weight: 500 !important;
+}
+.notification h3.noti-head {
+	font-size: 1rem;
+	font-weight: 600 !important;
+	padding-bottom: 5px;
+	color: #fff !important;
+
+}
+
+.notification.visible{
+	visibility: visible;
+	transform: translate(0);
+}
+.notification.remove{
+	opacity: 0;
+	transform: translate(0) scale(0.8) !important;
+}

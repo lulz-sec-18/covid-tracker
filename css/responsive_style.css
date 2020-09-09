@@ -11,6 +11,7 @@
     }
     p.Form-title{
         margin-bottom: 0.5%;
+        font-size: 2rem !important;
         
     }
 
@@ -80,7 +81,7 @@
     
     .cards-2 .card{
         margin-left: 23.6% !important;
-       
+        margin-right: 23.6% !important;
         align-self: center;
     }
     .search__container {
@@ -93,6 +94,10 @@
     .india-graph{
         margin-left: 2%;
         margin-right: 2%;
+    }
+
+    body.dark-theme .navbar-custom .nav-item .nav-link{
+        color: #fff !important;
     }
    
 

@@ -161,6 +161,17 @@ var chart = new CanvasJS.Chart("chartContainer", {
           }]
         });
         chart.render();
+        //for Adding the graph on search
+
+        
+            let Worldgraph = document.createElement('div')
+            let prevsibling = document.querySelector('.indiastats')
+            let graph = document.createElement('div')
+            Worldgraph.className = "world-graph"
+            graph.className = "chartContainer"
+            Worldgraph.appendChild(graph)
+            document.body.insertBefore(Worldgraph,prevsibling)
+        
 
 
 };
