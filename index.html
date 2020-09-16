@@ -74,8 +74,16 @@
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#About">About</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" id="button" class="nav-link page-scroll">Login</a>
+                <!-- <li class="nav-item">
+                    <a href="#" id="button" class="nav-link page-scroll">Login</a
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle page-scroll"  id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" ><span class="item-text" onclick="showForm()">Login</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">Details</span></a>
+                    </div>
                 </li>
             </ul>
             
@@ -109,38 +117,42 @@
 
     <!--   POpup Form  -->
     <div class="popup animate__animated animate__pulse">
+        
         <div class="container-card" id="container">
         <div class="form-container sign-up-container">
-            <form action="#" class="login-form">
+            <div  class="login-form" >
                 <h1 class="Form-title" style="line-height: 35px;">Create Account</h1>
+
                 <a href="#" class="close"><span class="fas fa-times-circle" id="close"></span></a>
+                
                 <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <button class="social" onclick="facebookSignIn()"><i class="fab fa-facebook-f"></i></button>
+                    <button class="social" onclick="googleSignIn()"><i class="fab fa-google-plus-g"></i></button>
                    
                 </div>
                 <span class="form-bottom-title">or use your email for registration</span>
                 <input class = "popup-form" type="text" placeholder="Name" />
-                <input  class = "popup-form" type="email" placeholder="Email" />
-                <input  class = "popup-form" type="password" placeholder="Password" />
-                <button class="popup-button">Sign Up</button>
-            </form>
+                <input  class = "popup-form" type="email" placeholder="Email" id="mail_field"/>
+                <input  class = "popup-form" type="password" placeholder="Password" id="assword_field"/>
+                
+                <button onclick="ogin()" class="popup-button sign-up">Sign Up</button>
+            </div>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#" class="login-form">
+            <div class="login-form">
                 <p class="Form-title" style="font-size: 3rem; font-weight:bold">Sign in</p>
                
                 <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <button class="social" onclick="facebookSignIn()"><i class="fab fa-facebook-f"></i></button>
+                    <button class="social" onclick="googleSignIn()"><i class="fab fa-google-plus-g"></i></button>
                     
                 </div>
                 <span class="form-bottom-title">or use your account</span>
-                <input  class = "popup-form" type="email" placeholder="Email" />
-                <input  class = "popup-form" type="password" placeholder="Password" />
+                <input  class = "popup-form" type="email" placeholder="Email" id="email_field"/>
+                <input  class = "popup-form" type="password" placeholder="Password" id="password_field"/>
                 <a href="#" class="popup-links">Forgot your password?</a>
-                <button class="popup-button">Sign In</button>
-            </form>
+                <button onclick="login()" class="popup-button sign-in">Sign In</button>
+            </div>
         </div>
         <div class="overlay-container">
             <div class="overlay">
@@ -495,7 +507,7 @@
                     </span>
                     
                     <span class="fa-stack">
-                        <a href="link">
+                        <a onclick="googleSignIn()">
                             <i class="fas fa-circle fa-stack-2x"></i>
                             <i class="fab fa-instagram fa-stack-1x"></i>
                         </a>
@@ -515,6 +527,20 @@
 
    
     <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = { apiKey: "AIzaSyAI0QRD4zHl7tDE7BzMfnQUtLZtK6vZmzg",
+    authDomain: "signup-9b93e.firebaseapp.com",
+    databaseURL: "https://signup-9b93e.firebaseio.com",
+    projectId: "signup-9b93e",
+    storageBucket: "signup-9b93e.appspot.com",
+    messagingSenderId: "774311847858",
+    appId: "1:774311847858:web:eec560fb540a3e66bba6ab",
+    measurementId: "G-166QPWFEDF"
+    };
+    firebase.initializeApp(config);
+    </script>
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
     <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
