@@ -140,15 +140,15 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
 
-    document.getElementById("user_div").style.display = "block";
-    document.getElementById("login_div").style.display = "none";
+    // document.getElementById("user_div").style.display = "block";
+    // document.getElementById("login_div").style.display = "none";
 
     var user = firebase.auth().currentUser;
 
     if(user != null){
 
-      var email_id = user.email;
-      document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+      // var email_id = user.email;
+      // document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
 
     }
 
@@ -160,6 +160,27 @@ firebase.auth().onAuthStateChanged(function(user) {
 
   }
 });
+formDrop = (Head,Body)=>{
+  document.querySelector('.popup').style.display='none';
+  createCustomNotification(Head,Body);
+}
+//Forgot PassWord------------>
+
+forgotPass = () =>{
+  var auth = firebase.auth();
+var emailAddress = document.getElementById("email_field").value;
+if(emailAddress.value != null){
+  auth.sendPasswordResetEmail(emailAddress).then(function() {
+  formDrop("Don't Take Stress","We have sent reset link to your email");
+}).catch(function(error) {
+  // An error happened.
+  window.alert("Error :" + error.message );
+});
+}  
+
+}
+//Forgot Password Ends---------->
+
 
  function login(){
 
