@@ -266,6 +266,7 @@ function ogin(){
 
 function logout(){
   firebase.auth().signOut();
+  document.querySelector('#logOut').innerText = "LogIn";
 }
 
 
@@ -277,6 +278,7 @@ googleSignIn = () => {
     console.log(result)
     console.log("success google account linked")
     var user = result.user;
+    document.querySelector('#logOut').innerText = "LogOut";
     signin(user.displayName);
     profCont = document.getElementsByClassName('profile');
     profCont.innerHTML =`
