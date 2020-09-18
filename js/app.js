@@ -193,7 +193,7 @@ firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(e
   
 // // //     // Handle Errors here.
 
-var errorCode = error.code;
+ var errorCode = error.code;
  var errorMessage = error.message;
 
  window.alert("Error : " + errorMessage);
@@ -238,6 +238,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 
   }
 });
+document.getElementById('prof-close').addEventListener('click', function(e){ // closes Details on clicking cross
+
+  document.querySelector('.frame-prof').style.display='none';
+  
+  });//detail box closing function
+
+
+showDetails = () =>   document.querySelector('.frame-prof').style.display='flex';
 
 function ogin(){
 
@@ -270,6 +278,23 @@ googleSignIn = () => {
     console.log("success google account linked")
     var user = result.user;
     signin(user.displayName);
+    profCont = document.getElementsByClassName('profile');
+    profCont.innerHTML =`
+    <div class="image">
+                  <div class="circle-1"></div>
+                  <div class="circle-2"></div>
+                  <img class="prof-img" src="images/mask.svg" width="70" height="70" alt="UserName">
+              </div>
+              
+              <div class="name">${user.displayName}</div>
+              <div class="job">${user.email}</div>
+              
+              <div class="actions">
+                  
+                  <button class="btn-prof" id="subscribe">Subscribe</button>
+                  <button class="btn-prof" id="logOut" onclick="logout()">LogOut</button>
+              </div>
+    `;
   }).catch(function(err){
     console.log(err)
     console.log("Failed to do")
@@ -301,11 +326,25 @@ facebookSignIn = () => {
   firebase.auth().signInWithPopup(base_provider).then(function(result){
     console.log(result)
     console.log("success facebook account linked")
-    signin(result.displayName)
+    signin(result.displayName) //display Name in notification 
   }).catch(function(err){
     console.log(err)
     console.log("Failed to do")
   })
 }
+//Make form and details card draggable
+
+$( function() {
+  $( "#draggable" ).draggable(); //draggable jquery
+} );
+$( function() {
+  $( "#draggable-prof" ).draggable();//draggable jquery
+} );
+
+////////////////////////////////////////////---------->
+
+
+
+
 
 

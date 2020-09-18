@@ -19,6 +19,8 @@
 	<link href="css/magnific-popup.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/responsive_style.css" rel="stylesheet">
+    <link href="css/profile.scss" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     
 	<!-- Favicon  -->
     <link rel="icon" href="images/covid--logo.svg">
@@ -82,7 +84,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" ><span class="item-text" onclick="showForm()">Login</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">Details</span></a>
+                        <a class="dropdown-item" ><span class="item-text" onclick="showDetails()">Details</span></a>
                     </div>
                 </li>
             </ul>
@@ -116,7 +118,7 @@
     <!-- end of header -->
 
     <!--   POpup Form  -->
-    <div class="popup animate__animated animate__pulse">
+    <div class="popup animate__animated animate__pulse" id="draggable"> 
         
         <div class="container-card" id="container">
         <div class="form-container sign-up-container">
@@ -172,9 +174,45 @@
     </div>
     </div>
 
+<!--End of popup form-->
+
+<!-- User Profile Card -->
 
     
-<!--End of popup form-->
+    <div class="frame-prof" id="draggable-prof" >
+    <div class="center-prof">
+        <a href="#" class="prof-close" ><span class="fas fa-times-circle" id="prof-close"></span></a>
+      
+          <div class="profile">
+              <div class="image">
+                  <div class="circle-1"></div>
+                  <div class="circle-2"></div>
+                  <img class="prof-img" src="images/mask.svg" width="70" height="70" alt="UserName">
+              </div>
+              
+              <div class="name"></div>
+              <div class="job"></div>
+              
+              <div class="actions">
+                  
+                  <button class="btn-prof" id="subscribe">Subscribe</button>
+                  <button class="btn-prof" id="logOut" onclick="logout()">LogOut</button>
+              </div>
+          </div>
+          
+          
+    </div>
+  </div>
+
+
+
+
+
+<!-- End of profile card -->
+
+<!-- Picture Update -->
+
+<!-- Picture Update -->
 
 <div class="worldstats" id="WorldStats">
     <div class="stats-head">
@@ -551,5 +589,6 @@
     <script src="js/app.js"></script> <!-- Custom scripts -->
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script><!--script for graph -->
     <script src="js/indiagraph.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 </html>
