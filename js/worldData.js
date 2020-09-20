@@ -152,7 +152,9 @@ const updateUI = (data) => {
     </div> <!-- end of col -->
 </div> <!-- end of row -->
 <hr class="title-divider"><h3 style="text-align:center;">WORLD COVID GRAPH</h3><hr class="title-divider">
-    <div id="chartContainer" ></div>
+    <div class="world-graph">
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    </div>
 `;  
 var bgc;
 var fc;
