@@ -5,6 +5,15 @@ $(document).scroll(function(){
   $('.navbar').toggleClass('scrolled', $(this).scrollTop() > $('.navbar').height())
 });
 
+window.onscroll = function(){
+  if ($(".navbar").offset().top > 60) {
+    $(".dropdown-menu").removeClass("top-collapse");
+    
+  } else {
+    $(".dropdown-menu").addClass("top-collapse");
+  }
+}
+
 
 
 const btn = document.querySelector('.btn-toggle');
@@ -49,6 +58,7 @@ container.classList.remove("right-panel-active");
 // });
 function showForm(){
   document.querySelector('.popup').style.display = 'flex';
+  document.querySelector('.frame-prof').style.display='none'
 }
 
 document.getElementById('close').addEventListener('click', function(e){ // closes form on clicking cross
@@ -70,14 +80,19 @@ function signup(){
   createCustomNotification(head,body_text) // notification on signing up
 
 }
-function signin(name){
+function signin(name,photoUrl,email){
   document.querySelector('.popup').style.display='none';//hide form
  
   let head = "Sign in Successful"
   let body_text = "Welcome  to covitrax " + name;
-  createCustomNotification(head,body_text) // notification on signing in
+  
+  createCustomNotification(head,body_text)
+  document.querySelector('.name').innerText = name;
+  document.querySelector('.prof-img').setAttribute('src',photoUrl); // notification on signing in
+  document.querySelector('.user-email').innerText = name;
 
 }
+
 
 
 //Notification
@@ -205,9 +220,6 @@ firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(e
 
 }
 
-function logout(){
-  firebase.auth().signOut();
-}
 
 
 
@@ -226,6 +238,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     if(user != null){
 
       var email_id = user.email;
+
       // document.getElementById("ser_para").innerHTML = "Welcome User : " + email_id;
 
     }
@@ -251,6 +264,7 @@ function ogin(){
 
   var userEmail = document.getElementById("mail_field").value;
   var userPass = document.getElementById("assword_field").value;
+  
 
   firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
     // Handle Errors here.
@@ -266,6 +280,17 @@ function ogin(){
 
 function logout(){
   firebase.auth().signOut();
+  document.querySelector('#logOut').innerText = "LogIn";
+  document.querySelector('.name').innerText = "user";
+  document.querySelector('.prof-img').setAttribute('src','images/profile.png');
+}
+//details Login button
+
+if(document.querySelector("#logOut").innerText == "LogIn"){
+  document.querySelector("#logOut").setAttribute('onclick', 'showForm()')
+}
+else{
+  document.querySelector("#logOut").setAttribute('onclick', 'logout()')
 }
 
 
@@ -277,24 +302,9 @@ googleSignIn = () => {
     console.log(result)
     console.log("success google account linked")
     var user = result.user;
-    signin(user.displayName);
-    profCont = document.getElementsByClassName('profile');
-    profCont.innerHTML =`
-    <div class="image">
-                  <div class="circle-1"></div>
-                  <div class="circle-2"></div>
-                  <img class="prof-img" src="images/mask.svg" width="70" height="70" alt="UserName">
-              </div>
-              
-              <div class="name">${user.displayName}</div>
-              <div class="job">${user.email}</div>
-              
-              <div class="actions">
-                  
-                  <button class="btn-prof" id="subscribe">Subscribe</button>
-                  <button class="btn-prof" id="logOut" onclick="logout()">LogOut</button>
-              </div>
-    `;
+    document.querySelector('#logOut').innerText = "LogOut";
+    signin(user.displayName,user.photoURL,user.email);
+    
   }).catch(function(err){
     console.log(err)
     console.log("Failed to do")
@@ -324,9 +334,9 @@ facebookSignIn = () => {
   base_provider = new firebase.auth.FacebookAuthProvider()
   
   firebase.auth().signInWithPopup(base_provider).then(function(result){
-    console.log(result)
     console.log("success facebook account linked")
-    signin(result.displayName) //display Name in notification 
+    var user = result.user
+    signin(user.displayName,user.photoURL) //display Name in notification 
   }).catch(function(err){
     console.log(err)
     console.log("Failed to do")

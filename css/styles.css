@@ -333,6 +333,10 @@ a.white {
 	min-width: auto;
 	animation: fadeDropdown 0.2s; /* required for the fade animation */
 }
+.navbar-custom .dropdown:hover > .dropdown-menu.top-collapse {
+	display: none; 
+}
+
 
 @keyframes fadeDropdown {
     0% {
@@ -1384,6 +1388,7 @@ input.popup-form {
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
+	border-radius: 10px;
 }
 
 .container-card {
@@ -1398,7 +1403,7 @@ input.popup-form {
 	
 }
 
-.form-container {
+.form-container{
 	position: absolute;
 	top: 0;
 	height: 100%;
@@ -1538,7 +1543,7 @@ input.popup-form {
 	position: absolute;
 	top: 1px;
 	right: 5px;
-	background: #eee;
+	background: #7ce7f5;
 	height: 20px;
 	width: 20px;
 	border-radius: 50%;
@@ -1625,11 +1630,14 @@ input.popup-form {
 	position: absolute;
 	top: -1px;
 	right: 5px;
-	background: #d0f0f5;
+	background: #00bfd8;
 	height: 10px;
 	width: 10px;
 	border-radius: 50%;
 	cursor: pointer;
+}
+#prof-close:hover{
+	color: #000;
 }
 
 .frame-prof {
@@ -1649,7 +1657,7 @@ top: 50px;
 left: 40px;
 height: 330px;
 width: 320px;
-background:#d0f0f5;
+background: linear-gradient(#00bfd8,#d0f0f5);
 border-radius: 3px;
 overflow: hidden;
 box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.3);
@@ -1727,7 +1735,7 @@ font-weight: 600;
 margin-top: 20px;
 }
 
-.job {
+.user-email {
 font-size: 13px;
 line-height: 15px;
 }
