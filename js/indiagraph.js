@@ -15,6 +15,7 @@ if($('.btn-toggle').hasClass("dark-theme")){
          bgc = "#fffff";
          fc = "#000000";
     }
+
 window.onload = function () {
 
     var bgc;

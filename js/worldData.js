@@ -12,6 +12,25 @@ const getCountry = async(country) => {
     return data;
 
 };
+
+function colorInvert(){
+    if($('.btn-toggle').hasClass("dark-theme")){
+        return "#00bfd8";
+    }
+    else{
+        return "#00bfd8";
+    }
+}
+// GRAPH
+if($('.btn-toggle').hasClass("dark-theme")){
+       bgc = "#00BFD8";
+       fc = "#00BFD8";
+    }
+    else{
+         bgc = "#00BFD8";
+         fc = "#00BFD8";
+    }
+
 //number wuth commas and font-sizing
 
 function numberWithCommas(x) {
@@ -131,13 +150,19 @@ const updateUI = (data) => {
 
 
     </div> <!-- end of col -->
-</div> <!-- end of row -->`;  
-
+</div> <!-- end of row -->
+<hr class="title-divider"><h3 style="text-align:center;">WORLD COVID GRAPH</h3><hr class="title-divider">
+    <div id="chartContainer" ></div>
+`;  
+var bgc;
+var fc;
 var chart = new CanvasJS.Chart("chartContainer", {
     animationEnabled: true,
     title: {
-      text: "Country Wise Census"
+      text: "Country Wise Census",
+      fontColor: fc
     },
+    backgroundColor: bgc,
     theme: "dark2"
     ,
     axisX: {
