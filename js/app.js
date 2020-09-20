@@ -49,6 +49,7 @@ container.classList.remove("right-panel-active");
 // });
 function showForm(){
   document.querySelector('.popup').style.display = 'flex';
+  document.querySelector('.frame-prof').style.display='none'
 }
 
 document.getElementById('close').addEventListener('click', function(e){ // closes form on clicking cross
@@ -70,12 +71,15 @@ function signup(){
   createCustomNotification(head,body_text) // notification on signing up
 
 }
-function signin(name){
+function signin(name,photoUrl){
   document.querySelector('.popup').style.display='none';//hide form
  
   let head = "Sign in Successful"
   let body_text = "Welcome  to covitrax " + name;
-  createCustomNotification(head,body_text) // notification on signing in
+  
+  createCustomNotification(head,body_text)
+  document.querySelector('.name').innerText = name;
+  document.querySelector('.prof-img').setAttribute('src',photoUrl); // notification on signing in
 
 }
 
@@ -205,9 +209,6 @@ firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(e
 
 }
 
-function logout(){
-  firebase.auth().signOut();
-}
 
 
 
@@ -226,6 +227,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     if(user != null){
 
       var email_id = user.email;
+
       // document.getElementById("ser_para").innerHTML = "Welcome User : " + email_id;
 
     }
@@ -251,6 +253,7 @@ function ogin(){
 
   var userEmail = document.getElementById("mail_field").value;
   var userPass = document.getElementById("assword_field").value;
+  
 
   firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
     // Handle Errors here.
@@ -267,6 +270,16 @@ function ogin(){
 function logout(){
   firebase.auth().signOut();
   document.querySelector('#logOut').innerText = "LogIn";
+  document.querySelector('.name').innerText = "user";
+  document.querySelector('.prof-img').setAttribute('src','images/profile.png');
+}
+//details Login button
+
+if(document.querySelector("#logOut").innerText == "LogIn"){
+  document.querySelector("#logOut").setAttribute('onclick', 'showForm()')
+}
+else{
+  document.querySelector("#logOut").setAttribute('onclick', 'logout()')
 }
 
 
@@ -279,24 +292,8 @@ googleSignIn = () => {
     console.log("success google account linked")
     var user = result.user;
     document.querySelector('#logOut').innerText = "LogOut";
-    signin(user.displayName);
-    profCont = document.getElementsByClassName('profile');
-    profCont.innerHTML =`
-    <div class="image">
-                  <div class="circle-1"></div>
-                  <div class="circle-2"></div>
-                  <img class="prof-img" src="images/mask.svg" width="70" height="70" alt="UserName">
-              </div>
-              
-              <div class="name">${user.displayName}</div>
-              <div class="job">${user.email}</div>
-              
-              <div class="actions">
-                  
-                  <button class="btn-prof" id="subscribe">Subscribe</button>
-                  <button class="btn-prof" id="logOut" onclick="logout()">LogOut</button>
-              </div>
-    `;
+    signin(user.displayName,user.photoURL);
+    
   }).catch(function(err){
     console.log(err)
     console.log("Failed to do")
