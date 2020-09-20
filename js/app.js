@@ -5,6 +5,15 @@ $(document).scroll(function(){
   $('.navbar').toggleClass('scrolled', $(this).scrollTop() > $('.navbar').height())
 });
 
+window.onscroll = function(){
+  if ($(".navbar").offset().top > 60) {
+    $(".dropdown-menu").removeClass("top-collapse");
+    
+  } else {
+    $(".dropdown-menu").addClass("top-collapse");
+  }
+}
+
 
 
 const btn = document.querySelector('.btn-toggle');
@@ -71,7 +80,7 @@ function signup(){
   createCustomNotification(head,body_text) // notification on signing up
 
 }
-function signin(name,photoUrl){
+function signin(name,photoUrl,email){
   document.querySelector('.popup').style.display='none';//hide form
  
   let head = "Sign in Successful"
@@ -80,8 +89,10 @@ function signin(name,photoUrl){
   createCustomNotification(head,body_text)
   document.querySelector('.name').innerText = name;
   document.querySelector('.prof-img').setAttribute('src',photoUrl); // notification on signing in
+  document.querySelector('.user-email').innerText = name;
 
 }
+
 
 
 //Notification
@@ -292,7 +303,7 @@ googleSignIn = () => {
     console.log("success google account linked")
     var user = result.user;
     document.querySelector('#logOut').innerText = "LogOut";
-    signin(user.displayName,user.photoURL);
+    signin(user.displayName,user.photoURL,user.email);
     
   }).catch(function(err){
     console.log(err)
@@ -323,9 +334,9 @@ facebookSignIn = () => {
   base_provider = new firebase.auth.FacebookAuthProvider()
   
   firebase.auth().signInWithPopup(base_provider).then(function(result){
-    console.log(result)
     console.log("success facebook account linked")
-    signin(result.displayName) //display Name in notification 
+    var user = result.user
+    signin(user.displayName,user.photoURL) //display Name in notification 
   }).catch(function(err){
     console.log(err)
     console.log("Failed to do")
