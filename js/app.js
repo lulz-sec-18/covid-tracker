@@ -80,7 +80,7 @@ function signup(){
   createCustomNotification(head,body_text) // notification on signing up
 
 }
-function signin(name,photoUrl,email){
+function signin(name,photoUrl,email,verification,){
   document.querySelector('.popup').style.display='none';//hide form
  
   let head = "Sign in Successful"
@@ -89,9 +89,20 @@ function signin(name,photoUrl,email){
   createCustomNotification(head,body_text)
   document.querySelector('.name').innerText = name;
   document.querySelector('.prof-img').setAttribute('src',photoUrl); // notification on signing in
-  document.querySelector('.user-email').innerText = name;
-
+  document.querySelector('.user-email').innerText = email;
+  if(verification){
+    document.querySelector('.btn-verify').innerText = "Verified";
+    document.querySelector('.btn-verify').style.backgroundColor = "#23DC3D";
+    document.querySelector('.btn-verify').style.borderColor = "#23DC3D" 
+  }
+  else{
+    document.querySelector('.btn-verify').innerText = "Verify";
+    document.querySelector('.btn-verify').style.backgroundColor = "#fa3e2b";
+    document.querySelector('.btn-verify').style.borderColor = "#fa3e2b"
+  }
+  
 }
+
 
 
 
@@ -148,33 +159,28 @@ function boto () {
   document.body.appendChild(js);
 }
 boto();
+var flag2 = 0
 
 // User Authentication--------------------------------------------------------------------->
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-
-    // document.getElementById("user_div").style.display = "block";
-    // document.getElementById("login_div").style.display = "none";
-
     var user = firebase.auth().currentUser;
 
     if(user != null){
-
-      // var email_id = user.email;
-      // document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+     flag2 = 1;
+     signin(user.displayName,user.photoURL,user.email,user.emailVerified);
+     $("#logOut").attr("disabled", false);
 
     }
 
   } else {
     // No user is signed in.
-
-    document.getElementById("user_div").style.display = "none";
-    document.getElementById("login_div").style.display = "block";
-
   }
 });
+
+
 formDrop = (Head,Body)=>{
   document.querySelector('.popup').style.display='none';
   createCustomNotification(Head,Body);
@@ -197,28 +203,26 @@ if(emailAddress.value != null){
 //Forgot Password Ends---------->
 
 
- function login(){
+ function login() {
+   var userEmail = document.getElementById("email_field").value;
+   var userPass = document.getElementById("password_field").value;
+   console.log("login pressed");
+   var flag = 1;
 
-var userEmail = document.getElementById("email_field").value;
-var userPass = document.getElementById("password_field").value;
-console.log("login pressed");
-var flag = 1;
+   firebase
+     .auth()
+     .signInWithEmailAndPassword(userEmail, userPass)
+     .catch(function (error) {
+       // // //     // Handle Errors here.
+       var errorCode = error.code;
+       var errorMessage = error.message;
 
-firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
-  
-// // //     // Handle Errors here.
+       window.alert("Error : " + errorMessage);
+       flag = 0;
 
- var errorCode = error.code;
- var errorMessage = error.message;
-
- window.alert("Error : " + errorMessage);
- flag = 0;
-
-// ...
- });
- 
-
-}
+       // ...
+     });
+ }
 
 
 
@@ -251,6 +255,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 
   }
 });
+
+
 document.getElementById('prof-close').addEventListener('click', function(e){ // closes Details on clicking cross
 
   document.querySelector('.frame-prof').style.display='none';
@@ -264,9 +270,19 @@ function ogin(){
 
   var userEmail = document.getElementById("mail_field").value;
   var userPass = document.getElementById("assword_field").value;
-  
+  var userName = document.getElementById("userName").value;
 
-  firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+  firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).then(function(){
+      var user = firebase.auth().currentUser;
+
+            user.updateProfile({
+              displayName: userName
+            }).then(function() {
+              // Update successful.
+            }).catch(function(error) {
+              // An error happened.
+            });
+  }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -275,41 +291,44 @@ function ogin(){
 
     // ...
   });
+  
+  
 
 }
 
 function logout(){
   firebase.auth().signOut();
-  document.querySelector('#logOut').innerText = "LogIn";
   document.querySelector('.name').innerText = "user";
   document.querySelector('.prof-img').setAttribute('src','images/profile.png');
+  $("#logOut").attr("disabled", true);
+  document.querySelector('.user-email').innerText = "Email"
+
 }
 //details Login button
 
-if(document.querySelector("#logOut").innerText == "LogIn"){
-  document.querySelector("#logOut").setAttribute('onclick', 'showForm()')
-}
-else{
-  document.querySelector("#logOut").setAttribute('onclick', 'logout()')
-}
+
+
 
 
 // google signin
 
 googleSignIn = () => {
-  base_provider = new firebase.auth.GoogleAuthProvider()
-  firebase.auth().signInWithPopup(base_provider).then(function(result){
-    console.log(result)
-    console.log("success google account linked")
-    var user = result.user;
-    document.querySelector('#logOut').innerText = "LogOut";
-    signin(user.displayName,user.photoURL,user.email);
-    
-  }).catch(function(err){
-    console.log(err)
-    console.log("Failed to do")
-  })
-}
+  base_provider = new firebase.auth.GoogleAuthProvider();
+  firebase
+    .auth()
+    .signInWithPopup(base_provider)
+    .then(function (result) {
+      console.log(result);
+      console.log("success google account linked");
+      var user = result.user;
+      document.querySelector("#logOut").innerText = "LogOut";
+      signin(user.displayName, user.photoURL, user.email);
+    })
+    .catch(function (err) {
+      console.log(err);
+      console.log("Failed to do");
+    });
+};
 
 
 // facebook sign in
@@ -331,17 +350,21 @@ googleSignIn = () => {
 // }
 
 facebookSignIn = () => {
-  base_provider = new firebase.auth.FacebookAuthProvider()
-  
-  firebase.auth().signInWithPopup(base_provider).then(function(result){
-    console.log("success facebook account linked")
-    var user = result.user
-    signin(user.displayName,user.photoURL) //display Name in notification 
-  }).catch(function(err){
-    console.log(err)
-    console.log("Failed to do")
-  })
-}
+  base_provider = new firebase.auth.FacebookAuthProvider();
+
+  firebase
+    .auth()
+    .signInWithPopup(base_provider)
+    .then(function (result) {
+      console.log("success facebook account linked");
+      var user = result.user;
+      signin(user.displayName, user.photoURL); //display Name in notification
+    })
+    .catch(function (err) {
+      console.log(err);
+      console.log("Failed to do");
+    });
+};
 //Make form and details card draggable
 
 $( function() {
@@ -352,6 +375,17 @@ $( function() {
 } );
 
 ////////////////////////////////////////////---------->
+
+function verifyUser(){
+  var user = firebase.auth().currentUser;
+  if(!user.emailVerified){
+      user.sendEmailVerification().then(function() {
+        // Email sent.
+      }).catch(function(error) {
+        // An error happened.
+      });
+  }
+}
 
 
 
