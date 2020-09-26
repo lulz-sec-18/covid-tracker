@@ -14,11 +14,11 @@ const getCountry = async(country) => {
 };
 
 function colorInvert(){
-    if($('.btn-toggle').hasClass("dark-theme")){
-        return "#00bfd8";
+    if($('body').hasClass("dark-theme")){
+        return "dark2";
     }
     else{
-        return "#00bfd8";
+        return "light2";
     }
 }
 // GRAPH
@@ -165,8 +165,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
       fontColor: fc
     },
     backgroundColor: bgc,
-    theme: "dark2"
-,
+   
     axisX: {
       interval: 1
     },
