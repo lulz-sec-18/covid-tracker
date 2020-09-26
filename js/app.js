@@ -170,10 +170,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     if(user != null){
      flag2 = 1;
-     signin(user.displayName,user.photoURL,user.email,user.emailVerified);
+     
      $("#logOut").attr("disabled", false);
      document.querySelector('.login-item').style.display="none";
      document.querySelector('.detail-item').style.display="flex";
+     signin(user.displayName, user.photoURL,user.email,user.emailVerified);
 
     }
 
@@ -191,14 +192,18 @@ formDrop = (Head,Body)=>{
   document.querySelector('.popup').style.display='none';
   createCustomNotification(Head,Body);
 }
+DetailsDrop = (Head,Body)=>{
+  document.querySelector('.frame-prof').style.display='none';
+  createCustomNotification(Head,Body);
+}
 //Forgot PassWord------------>
 
 forgotPass = () =>{
   var auth = firebase.auth();
 var emailAddress = document.getElementById("email_field").value;
-if(emailAddress.value != null){
+if(emailAddress != null){
   auth.sendPasswordResetEmail(emailAddress).then(function() {
-  formDrop("Don't Take Stress","We have sent reset link to your email");
+  formDrop("Don't Take Stress","We have sent Password reset link to your email");
 }).catch(function(error) {
   // An error happened.
   window.alert("Error :" + error.message );
@@ -228,6 +233,8 @@ if(emailAddress.value != null){
 
        // ...
      });
+     var user = firebase.auth().currentUser;  
+     signin(user.displayName,user.photoURL,user.email,user.emailVerified);
  }
 
 
@@ -281,10 +288,11 @@ function ogin(){
             user.updateProfile({
               displayName: userName
             }).then(function() {
-              // Update successful.
+               signin(user.displayName,user.photoURL,user.email,user.emailVerified);// Update successful.
             }).catch(function(error) {
               // An error happened.
             });
+           
   }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -306,6 +314,7 @@ function logout(){
   document.querySelector('.prof-img').setAttribute('src','images/profile.png');
   $("#logOut").attr("disabled", true);
   document.querySelector('.user-email').innerText = "Email"
+  DetailsDrop("LogOut Successful","Come back again ,Thank you");
 
 }
 
@@ -325,7 +334,7 @@ googleSignIn = () => {
       console.log("success google account linked");
       var user = result.user;
       document.querySelector("#logOut").innerText = "LogOut";
-      signin(user.displayName, user.photoURL, user.email);
+      signin(user.displayName, user.photoURL, user.email,user.emailVerified);
     })
     .catch(function (err) {
       console.log(err);
@@ -344,7 +353,7 @@ facebookSignIn = () => {
     .then(function (result) {
       console.log("success facebook account linked");
       var user = result.user;
-      signin(user.displayName, user.photoURL); //display Name in notification
+      signin(user.displayName, user.photoURL,user.email,user.emailVerified); //display Name in notification
     })
     .catch(function (err) {
       console.log(err);
@@ -373,14 +382,10 @@ function verifyUser(){
   }
 }
 
-var storage = firebase.storage();
+//------------------------------------->
 
-// Create a storage reference from our storage service
-var storageRef = storage.ref();
-var spaceRef = storageRef.child('images/logo (2).png');
-console.log(spaceRef.fullPath);
-console.log(spaceRef.name);
 
+ 
 
 
 
