@@ -172,11 +172,17 @@ firebase.auth().onAuthStateChanged(function(user) {
      flag2 = 1;
      signin(user.displayName,user.photoURL,user.email,user.emailVerified);
      $("#logOut").attr("disabled", false);
+     document.querySelector('.login-item').style.display="none";
+     document.querySelector('.detail-item').style.display="flex";
 
     }
 
   } else {
     // No user is signed in.
+    document.querySelector('.login-item').style.display="flex";
+    document.querySelector('.detail-item').style.display="none";
+
+
   }
 });
 
