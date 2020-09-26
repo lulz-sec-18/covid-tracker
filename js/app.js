@@ -100,6 +100,11 @@ function signin(name,photoUrl,email,verification,){
     document.querySelector('.btn-verify').style.backgroundColor = "#fa3e2b";
     document.querySelector('.btn-verify').style.borderColor = "#fa3e2b"
   }
+
+  if(photoUrl == null){
+    $('.prof-img').attr('src', 'images/profile.png');
+  }
+  
   
 }
 
@@ -182,6 +187,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // No user is signed in.
     document.querySelector('.login-item').style.display="flex";
     document.querySelector('.detail-item').style.display="none";
+    
 
 
   }
@@ -375,7 +381,7 @@ function verifyUser(){
   var user = firebase.auth().currentUser;
   if(!user.emailVerified){
       user.sendEmailVerification().then(function() {
-        // Email sent.
+        DetailsDrop("Verification Email Sent","Go to your inbox to verify your email");
       }).catch(function(error) {
         // An error happened.
       });
