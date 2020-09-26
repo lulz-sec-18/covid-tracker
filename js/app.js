@@ -227,15 +227,12 @@ if(emailAddress.value != null){
 
 
 
-// new code starts here
+// new code starts here-------------->
 
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-
-    // document.getElementById("ser_div").style.display = "block";
-    // document.getElementById("ogin_div").style.display = "none";
 
     var user = firebase.auth().currentUser;
 
@@ -243,28 +240,28 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       var email_id = user.email;
 
-      // document.getElementById("ser_para").innerHTML = "Welcome User : " + email_id;
-
     }
 
   } else {
     // No user is signed in.
 
-    // document.getElementById("ser_div").style.display = "none";
-    // document.getElementById("ogin_div").style.display = "block";
-
   }
 });
 
+// detail box closing function------------->
 
 document.getElementById('prof-close').addEventListener('click', function(e){ // closes Details on clicking cross
 
   document.querySelector('.frame-prof').style.display='none';
   
-  });//detail box closing function
+  });
+  
+  //detail box opening function--------------->
 
 
 showDetails = () =>   document.querySelector('.frame-prof').style.display='flex';
+
+//sign Up --------------->
 
 function ogin(){
 
@@ -295,6 +292,7 @@ function ogin(){
   
 
 }
+//Logout---------------->
 
 function logout(){
   firebase.auth().signOut();
@@ -304,13 +302,12 @@ function logout(){
   document.querySelector('.user-email').innerText = "Email"
 
 }
-//details Login button
 
 
 
 
 
-// google signin
+// google signin---------------->
 
 googleSignIn = () => {
   base_provider = new firebase.auth.GoogleAuthProvider();
@@ -330,24 +327,7 @@ googleSignIn = () => {
     });
 };
 
-
-// facebook sign in
-
-// {
-//   status: 'connected',
-//   authResponse: {
-//       accessToken: '...',
-//       expiresIn:'...',
-//       signedRequest:'...',
-//       userID:'...'
-//   }
-// }
-
-// function checkLoginState() {
-//   FB.getLoginStatus(function(response) {
-//     statusChangeCallback(response);
-//   });
-// }
+//facebook sign in---------------->
 
 facebookSignIn = () => {
   base_provider = new firebase.auth.FacebookAuthProvider();
@@ -365,7 +345,7 @@ facebookSignIn = () => {
       console.log("Failed to do");
     });
 };
-//Make form and details card draggable
+//Make form and details card draggable-------->
 
 $( function() {
   $( "#draggable" ).draggable(); //draggable jquery
@@ -374,7 +354,7 @@ $( function() {
   $( "#draggable-prof" ).draggable();//draggable jquery
 } );
 
-////////////////////////////////////////////---------->
+//Verify user by sending verification email---------->
 
 function verifyUser(){
   var user = firebase.auth().currentUser;
@@ -386,6 +366,14 @@ function verifyUser(){
       });
   }
 }
+
+var storage = firebase.storage();
+
+// Create a storage reference from our storage service
+var storageRef = storage.ref();
+var spaceRef = storageRef.child('images/logo (2).png');
+console.log(spaceRef.fullPath);
+console.log(spaceRef.name);
 
 
 

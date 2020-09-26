@@ -166,7 +166,6 @@ var chart = new CanvasJS.Chart("chartContainer", {
     },
     backgroundColor: bgc,
     theme: "dark2"
-    ,
 ,
     axisX: {
       interval: 1
