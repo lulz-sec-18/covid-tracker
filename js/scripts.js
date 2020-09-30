@@ -72,21 +72,3 @@
 
 ///-------------------------->
 //Email Subscription
-var settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send",
-	"method": "POST",
-	"headers": {
-		"x-rapidapi-host": "rapidprod-sendgrid-v1.p.rapidapi.com",
-		"x-rapidapi-key": "1d40027800msh74e8113ce106290p157b84jsn78311d0ac55a",
-		"content-type": "application/json",
-		"accept": "application/json"
-	},
-	"processData": false,
-	"data": "{  \"personalizations\": [    {      \"to\": [        {          \"email\": \"john@example.com\"        }      ],      \"subject\": \"Hello, World!\"    }  ],  \"from\": {    \"email\": \"from_address@example.com\"  },  \"content\": [    {      \"type\": \"text/plain\",      \"value\": \"Hello, World!\"    }  ]}"
-}
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});

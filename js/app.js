@@ -156,15 +156,15 @@ let onLoadHead = "Welcome to CoviTrax"
 let onLoadBody = 'Here you will get overall cencus of Covid-19' // variable stored content
 createCustomNotification(onLoadHead,onLoadBody)
 
-function boto () {
-  let js = document.createElement('script');
-  js.type = 'text/javascript';
-  js.async = 1;
-  js.src = 'https://go.botmaker.com/rest/webchat/p/74NGS7JADrcb/init.js?l=en&t=w';
-  document.body.appendChild(js);
-}
-boto();
-var flag2 = 0
+// function boto () {
+//   let js = document.createElement('script');
+//   js.type = 'text/javascript';
+//   js.async = 1;
+//   js.src = 'https://go.botmaker.com/rest/webchat/p/74NGS7JADrcb/init.js?l=en&t=w';
+//   document.body.appendChild(js);
+// }
+// boto();
+// var flag2 = 0
 
 // User Authentication--------------------------------------------------------------------->
 
