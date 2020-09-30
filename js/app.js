@@ -389,7 +389,13 @@ function verifyUser(){
 }
 
 //------------------------------------->
-
+(function () {
+  let js = document.createElement('script');
+  js.type = 'text/javascript';
+  js.async = 1;
+  js.src = 'https://go.botmaker.com/rest/webchat/p/NQRW7pGnVYyA/init.js?l=en&t=w';
+  document.body.appendChild(js);
+})();
 
  
 

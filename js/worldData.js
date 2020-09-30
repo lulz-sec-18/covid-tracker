@@ -1,64 +1,54 @@
-const countryForm = document.getElementById('form1');
-const details = document.getElementById('details1');
+const countryForm = document.getElementById("form1");
+const details = document.getElementById("details1");
 
 var countryDets = {};
 
-const getCountry = async(country) => {
-    
-    const base = 'https://disease.sh/v3/covid-19/countries/';
-    const query = country;
-    const response = await fetch(base+country);
-    const data  =await response.json();
-    return data;
-
+const getCountry = async (country) => {
+  const base = "https://disease.sh/v3/covid-19/countries/";
+  const query = country;
+  const response = await fetch(base + country);
+  const data = await response.json();
+  return data;
 };
 
-function colorInvert(){
-    if($('body').hasClass("dark-theme")){
-        return "dark2";
-    }
-    else{
-        return "light2";
-    }
+function colorInvert() {
+  if ($("body").hasClass("dark-theme")) {
+    return "dark2";
+  } else {
+    return "light2";
+  }
 }
 // GRAPH
-if($('.btn-toggle').hasClass("dark-theme")){
-       bgc = "#00BFD8";
-       fc = "#00BFD8";
-    }
-    else{
-         bgc = "#00BFD8";
-         fc = "#00BFD8";
-    }
+if ($(".btn-toggle").hasClass("dark-theme")) {
+  bgc = "#00BFD8";
+  fc = "#00BFD8";
+} else {
+  bgc = "#00BFD8";
+  fc = "#00BFD8";
+}
 
 //number wuth commas and font-sizing
 
 function numberWithCommas(x) {
-    x = x.toString();
-    var pattern = /(-?\d+)(\d{3})/;
-    while (pattern.test(x))
-        x = x.replace(pattern, "$1,$2");
-    return x;
+  x = x.toString();
+  var pattern = /(-?\d+)(\d{3})/;
+  while (pattern.test(x)) x = x.replace(pattern, "$1,$2");
+  return x;
 }
 
-function checkSize(x){
-    if(x>999999)
-         return "2.2rem";
-    else
-        return "2.5rem";
-
+function checkSize(x) {
+  if (x > 999999) return "2.2rem";
+  else return "2.5rem";
 }
-
 
 const updateUI = (data) => {
-
-    var countryDets = data.countryDets;
-    console.log(countryDets);
-    details.innerHTML = `
+  var countryDets = data.countryDets;
+  console.log(countryDets);
+  details.innerHTML = `
     <div class="row">
     <div class="col-lg-12">
         
-    <hr class="title-divider"><h2>${(countryDets.country).toUpperCase()}</h2> <hr class="title-divider">
+    <hr class="title-divider"><h2>${countryDets.country.toUpperCase()}</h2> <hr class="title-divider">
         
     </div> 
 </div> 
@@ -72,7 +62,9 @@ const updateUI = (data) => {
                 
                 <hr class="cell-divide-hr">
                 <div class="numbers">
-                    <span class="value" style="font-size:${checkSize(countryDets.cases)};">${numberWithCommas(countryDets.cases)}</span>
+                    <span class="value" style="font-size:${checkSize(
+                      countryDets.cases
+                    )};">${numberWithCommas(countryDets.cases)}</span>
                     
                 </div>
                 <hr class="cell-divide-hr">
@@ -89,7 +81,9 @@ const updateUI = (data) => {
             
             <hr class="cell-divide-hr">
             <div class="numbers">
-                <span class="value"  style="font-size:${checkSize(countryDets.active)};">${numberWithCommas(countryDets.active)}</span>
+                <span class="value"  style="font-size:${checkSize(
+                  countryDets.active
+                )};">${numberWithCommas(countryDets.active)}</span>
                 
             </div>
             <hr class="cell-divide-hr">
@@ -106,7 +100,9 @@ const updateUI = (data) => {
             
             <hr class="cell-divide-hr">
             <div class="numbers">
-                <span class="value" style="font-size:${checkSize(countryDets.recovered)};">${numberWithCommas(countryDets.recovered)}</span>
+                <span class="value" style="font-size:${checkSize(
+                  countryDets.recovered
+                )};">${numberWithCommas(countryDets.recovered)}</span>
                 
             </div>
             <hr class="cell-divide-hr">
@@ -122,7 +118,9 @@ const updateUI = (data) => {
             
             <hr class="cell-divide-hr">
             <div class="numbers">
-                <span class="value" style="font-size:${checkSize(countryDets.deaths)};">${numberWithCommas(countryDets.deaths)}</span>
+                <span class="value" style="font-size:${checkSize(
+                  countryDets.deaths
+                )};">${numberWithCommas(countryDets.deaths)}</span>
                 
             </div>
             <hr class="cell-divide-hr">
@@ -138,7 +136,9 @@ const updateUI = (data) => {
             
             <hr class="cell-divide-hr">
             <div class="numbers">
-                <span class="value" style="font-size:${checkSize(countryDets.todayCases)};">${numberWithCommas(countryDets.todayCases)}</span>
+                <span class="value" style="font-size:${checkSize(
+                  countryDets.todayCases
+                )};">${numberWithCommas(countryDets.todayCases)}</span>
                 
             </div>
             <hr class="cell-divide-hr">
@@ -155,83 +155,61 @@ const updateUI = (data) => {
     <div class="world-graph">
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
     </div>
-`;  
-var bgc;
-var fc;
-var chart = new CanvasJS.Chart("chartContainer", {
+`;
+  var bgc;
+  var fc;
+  var chart = new CanvasJS.Chart("chartContainer", {
     animationEnabled: true,
     title: {
       text: "Country Wise Census",
-      fontColor: fc
+      fontColor: fc,
     },
     backgroundColor: bgc,
-   
+
     axisX: {
-      interval: 1
+      interval: 1,
     },
     axisY: {
       title: "Cases",
       includeZero: true,
-  
     },
-    data: [{
-            type: "bar",
-            toolTipContent: "<b>{label}</b><br>{y}}",
-            dataPoints: [
-              { label: "Cases", y: countryDets.cases},
-              { label: "Active", y: countryDets.active},
-              { label: "Recovered", y: countryDets.recovered},
-              { label: "Deaths", y: countryDets.deaths},
-              { label: "Today", y: countryDets.todayCases},
-            ]
-          }]
-        });
-        chart.render();
-        //for Adding the graph on search
-
-        
-            let Worldgraph = document.createElement('div')
-            let prevsibling = document.querySelector('.indiastats')
-            let graph = document.createElement('div')
-            Worldgraph.className = "world-graph"
-            graph.className = "chartContainer"
-            Worldgraph.appendChild(graph)
-            document.body.insertBefore(Worldgraph,prevsibling)
-        
-
-
+    data: [
+      {
+        type: "bar",
+        toolTipContent: "<b>{label}</b><br>{y}}",
+        dataPoints: [
+          { label: "Cases", y: countryDets.cases },
+          { label: "Active", y: countryDets.active },
+          { label: "Recovered", y: countryDets.recovered },
+          { label: "Deaths", y: countryDets.deaths },
+          { label: "Today", y: countryDets.todayCases },
+        ],
+      },
+    ],
+  });
+  chart.render();
 };
 
-
-const updateCountry = async(country) => {
-
-    const countryDets = await getCountry(country);
-    return{ countryDets };
-
+const updateCountry = async (country) => {
+  const countryDets = await getCountry(country);
+  return { countryDets };
 };
 
 // execution starts from here
-countryForm.addEventListener('submit',e => {
-
-    console.clear();
-    e.preventDefault(); //to prevent default action of reloading of page
-    //get country value
-    const country = countryForm.country.value.trim();
-    console.log(country);
-    countryForm.reset();
-    //update the UI with new country
-    updateCountry(country)
-        .then(data => updateUI(data))
-        .catch(err => console.log(err));
-})
-
-window.onload = function () {
-   
-    
-}
+countryForm.addEventListener("submit", (e) => {
+  console.clear();
+  e.preventDefault(); //to prevent default action of reloading of page
+  //get country value
+  const country = countryForm.country.value.trim();
+  console.log(country);
+  countryForm.reset();
+  //update the UI with new country
+  updateCountry(country)
+    .then((data) => updateUI(data))
+    .catch((err) => console.log(err));
+});
 
 
 // remember to add this placeholder afterwards
 
 /* <img src="${countryDets.countryInfo.flag}" class="time card-img-top"> */
-
