@@ -10,6 +10,11 @@ function numberWithCommas(x) {
     return x;
 }
 
+function checkSize(x) {
+    if (x > 999999) return "2.2rem";
+    else return "2.5rem";
+  }
+
 const getState= async(state) => {
     
     const base = 'https://api.covidindiatracker.com/state_data.json';
@@ -49,7 +54,9 @@ Details.innerHTML = `
             
             <hr class="cell-divide-hr">
             <div class="numbers">
-                <span class="value">${numberWithCommas(obj.confirmed)}</span>
+                <span class="value"  style="font-size:${checkSize(
+                    obj.confirmed
+                  )};">${numberWithCommas(obj.confirmed)}</span>
                 
             </div>
             <hr class="cell-divide-hr">
@@ -66,7 +73,9 @@ Details.innerHTML = `
         
         <hr class="cell-divide-hr">
         <div class="numbers">
-            <span class="value">${numberWithCommas(obj.active)}</span>
+            <span class="value"  style="font-size:${checkSize(
+                obj.active
+              )};">${numberWithCommas(obj.active)}</span>
             
         </div>
         <hr class="cell-divide-hr">
@@ -83,7 +92,9 @@ Details.innerHTML = `
         
         <hr class="cell-divide-hr">
         <div class="numbers">
-            <span class="value">${numberWithCommas(obj.recovered)}</span>
+            <span class="value"  style="font-size:${checkSize(
+                obj.recovered
+              )};">${numberWithCommas(obj.recovered)}</span>
             
         </div>
         <hr class="cell-divide-hr">
@@ -99,7 +110,9 @@ Details.innerHTML = `
         
         <hr class="cell-divide-hr">
         <div class="numbers">
-            <span class="value">${numberWithCommas(obj.deaths)}</span>
+            <span class="value"  style="font-size:${checkSize(
+                obj.deaths
+              )};">${numberWithCommas(obj.deaths)}</span>
             
         </div>
         <hr class="cell-divide-hr">
