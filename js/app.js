@@ -226,7 +226,7 @@ forgotPass = () => {
 function login() {
   var userEmail = document.getElementById("email_field").value;
   var userPass = document.getElementById("password_field").value;
-  console.log("login pressed");
+ 
   var flag = 1;
 
   firebase
@@ -304,15 +304,13 @@ googleSignIn = () => {
     .auth()
     .signInWithPopup(base_provider)
     .then(function (result) {
-      console.log(result);
-      console.log("success google account linked");
+     
       var user = result.user;
       document.querySelector("#logOut").innerText = "LogOut";
       signin(user.displayName, user.photoURL, user.email, user.emailVerified);
     })
     .catch(function (err) {
-      console.log(err);
-      console.log("Failed to do");
+     
     });
 };
 
@@ -325,13 +323,11 @@ facebookSignIn = () => {
     .auth()
     .signInWithPopup(base_provider)
     .then(function (result) {
-      console.log("success facebook account linked");
       var user = result.user;
       signin(user.displayName, user.photoURL, user.email, user.emailVerified); //display Name in notification
     })
     .catch(function (err) {
-      console.log(err);
-      console.log("Failed to do");
+     
     });
 };
 

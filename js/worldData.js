@@ -1,6 +1,7 @@
 const countryForm = document.getElementById("form1");
 const details = document.getElementById("details1");
 
+
 var countryDets = {};
 
 const getCountry = async (country) => {
@@ -43,7 +44,7 @@ function checkSize(x) {
 
 const updateUI = (data) => {
   var countryDets = data.countryDets;
-  console.log(countryDets);
+
   details.innerHTML = `
     <div class="row">
     <div class="col-lg-12">
@@ -153,7 +154,7 @@ const updateUI = (data) => {
 </div> <!-- end of row -->
 <hr class="title-divider"><h3 style="text-align:center;">WORLD COVID GRAPH</h3><hr class="title-divider">
     <div class="world-graph">
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <div id="chartContainer"></div>
     </div>
 `;
   var bgc;
@@ -175,8 +176,8 @@ const updateUI = (data) => {
     },
     data: [
       {
-        type: "bar",
-        toolTipContent: "<b>{label}</b><br>{y}}",
+        type: "column",
+        toolTipContent: "<b>{label}</b><br>{y}",
         dataPoints: [
           { label: "Cases", y: countryDets.cases },
           { label: "Active", y: countryDets.active },
@@ -201,7 +202,7 @@ countryForm.addEventListener("submit", (e) => {
   e.preventDefault(); //to prevent default action of reloading of page
   //get country value
   const country = countryForm.country.value.trim();
-  console.log(country);
+  
   countryForm.reset();
   //update the UI with new country
   updateCountry(country)

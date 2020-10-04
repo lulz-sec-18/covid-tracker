@@ -99,6 +99,16 @@
     body.dark-theme .navbar-custom .nav-item .nav-link{
         color: #fff !important;
     }
+    .world-graph{
+        margin-left: 1%;
+        margin-right: 1%;
+        
+    }
+    #chartContainer{
+        height: 370px;
+        width: 100%;
+    }
+
    
 
      
