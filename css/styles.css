@@ -1779,7 +1779,7 @@ color: #fff;
 .resp-container {
     position: relative;
     overflow: hidden;
-    padding-top: 56.25%;
+    padding-top: 75%;
 }
 .resp-iframe {
     position: absolute;
