@@ -67,17 +67,20 @@
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#IndiaStats">IndiaStats</a>
                 </li>
-               <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#Precautions">Precautions</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle page-scroll"  id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#Precautions">Precautions</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item page-scroll" href="#selfTest"><span class="item-text" >Self Assesment</span></a>
+                        <hr>
+                        <a class="dropdown-item page-scroll" href="#FAQ"><span class="item-text">Faq</span></a>
+                    </div>
                 </li>
 
                 
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#About">About</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a href="#" id="button" class="nav-link page-scroll">Login</a
-                </li> -->
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll"  id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -500,12 +503,12 @@
 </div>
 
 
-<div class="resp-container">
+<div class="resp-container" id="selfTest">
     <iframe class="resp-iframe" src="https://covidselfassesment.netlify.app/" gesture=""  allow="encrypted-media" allowfullscreen></iframe>
 </div>
 <hr class="title-divider"><h3 style="text-align:center;">FREQUENTLY ASKED QUESTIONS</h3><hr class="title-divider">
 <div class="faq" style="margin-top: 5%;">
-    <div class="wrap">
+    <div class="wrap" id="FAQ">
 	
         <ul class="accordion">
             <li class="accordion__item">
