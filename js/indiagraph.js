@@ -32,8 +32,8 @@ window.onload = function () {
   };
 
   const updateData = (data) => {
-    console.log(data);
-    console.log(data.cases_time_series[200].totalconfirmed);
+    
+    
 
     for (var i = 0; i < data.cases_time_series.length; i++) {
       datapoint1.push({
@@ -58,8 +58,7 @@ window.onload = function () {
         ),
       });
     }
-    console.log(datapoint1);
-    console.log(datapoint4);
+    
 
     var chart = new CanvasJS.Chart("chartcoontainer", {
       title: {
@@ -139,7 +138,7 @@ window.onload = function () {
 
   fetchData(url)
     .then((data) => {
-      console.log(data.cases_time_series);
+      
       updateData(data);
     })
     .catch((error) => {

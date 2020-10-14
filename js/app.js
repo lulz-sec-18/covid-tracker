@@ -377,7 +377,7 @@ $(function () {
   $("#draggable-prof").draggable(); //draggable jquery
 });
 
-
+//FAQ
 $(function() {
 	$('.accordion').find('.accordion__title').click(function(){
 		// Adds active class
@@ -390,3 +390,14 @@ $(function() {
 		$('.accordion__title').not($(this)).removeClass('active');		
 	});
 });
+
+(function($){
+  "use strict";
+  $(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+
+}
+);
+

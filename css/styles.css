@@ -1912,19 +1912,56 @@ color: #fff;
 }
 
   
-		
-	
-	
+/* Table */
 
+  table{
+	width:100%;
+	table-layout: fixed;
+  }
+  .tbl-header{
+	background-color: #00bfd8;
+   }
+  .tbl-content{
+	height:300px;
+	overflow-x:auto;
+	margin-top: 0px;
+	border: 3px solid #00bfd8;
+	background:#caf2f7;
+  }
+  th{
+	padding: 20px 15px;
+	text-align: left;
+	font-weight: 800;
+	font-size: 12px;
+	color: #fff;
 
-
-	
-	
-	
-	
-	
-	
-
-
-
-
+	text-transform: uppercase;
+  }
+  td{
+	padding: 15px;
+	text-align: left;
+	vertical-align:middle;
+	font-weight: 600;
+	font-size: 12px;
+	color: #393939;
+	border-bottom: solid 2px rgba(0, 191,216,0.4);
+  }
+  
+  
+  /* demo styles */
+  
+  
+  section{
+	margin: 20px;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+ 

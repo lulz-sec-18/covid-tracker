@@ -12,6 +12,7 @@ const getCountry = async (country) => {
   return data;
 };
 
+
 function colorInvert() {
   if ($("body").hasClass("dark-theme")) {
     return "dark2";

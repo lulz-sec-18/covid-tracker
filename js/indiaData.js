@@ -24,9 +24,10 @@ const getState= async(state) => {
 
 };
 
+
 const updateui = (data,state) => {
 
-    console.log(state);
+    
     const stateDets = data.stateDets;
     console.log(stateDets);
     for(i = 0; i < stateDets.length; i++){
@@ -128,6 +129,24 @@ Details.innerHTML = `
 </div> `
 };
 
+const updateTable =(data)=>{
+    const stateDets= data.stateDets;
+    const tbody = document.getElementById('table-body');
+    for(i = 0; i < stateDets.length; i++){
+      tbody.innerHTML +=`
+            <tr>
+              <td>${numberWithCommas(stateDets[i].state)}</td>
+              <td>${numberWithCommas(stateDets[i].confirmed)}</td>
+              <td>${numberWithCommas(stateDets[i].active)}</td>
+              <td>${numberWithCommas(stateDets[i].recovered)}</td>
+              <td>${numberWithCommas(stateDets[i].deaths)}</td>
+            </tr>
+      `;  
+      console.log(i)
+    }
+
+}
+
 
 const updateState = async(state) => {
 
@@ -135,6 +154,8 @@ const updateState = async(state) => {
     return{ stateDets };
 
 };
+
+
 
 // execution starts from here
 stateForm.addEventListener('submit',e => {
@@ -151,6 +172,13 @@ stateForm.addEventListener('submit',e => {
         .catch(err => console.log(err));
 
 })
+
+function showTable(){
+    updateState()
+        .then(data => updateTable(data))
+        .catch(err => console.log(err));
+}
+showTable();
 
 
 
