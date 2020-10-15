@@ -1927,6 +1927,7 @@ color: #fff;
 	margin-top: 0px;
 	border: 3px solid #00bfd8;
 	background:#caf2f7;
+	
   }
   th{
 	padding: 20px 15px;
@@ -1963,5 +1964,12 @@ color: #fff;
 } 
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+tr:hover{
+	pointer-events: all;
+	cursor: pointer ;
+	background: #00bfd8;
+	transition: all 0.5s ease-in-out;
+
 }
  
