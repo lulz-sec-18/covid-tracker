@@ -9,10 +9,7 @@
     <title>CoviTrax</title>
     
     <!-- Styles -->
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/fontawesome-all.css" rel="stylesheet">
@@ -20,10 +17,9 @@
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/responsive_style.css" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    
-	<!-- Favicon  -->
     <link rel="icon" href="images/favicon.svg">
 </head>
+
 <body data-spy="scroll" data-target=".fixed-top" class="light-theme">
     
     <!-- Preloader -->
@@ -36,7 +32,6 @@
     </div>
     <!-- end of preloader -->
     
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <!-- Text Logo - Use this if you don't have a graphic logo -->
@@ -94,8 +89,7 @@
         </div>
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
-
-    
+   
     <!-- Header -->
     <header id="header" class="header">
         <div class="header-content">
@@ -175,12 +169,9 @@
         </div>
     </div>
     </div>
+    <!--End of popup form-->
 
-<!--End of popup form-->
-
-<!-- User Profile Card -->
-
-    
+    <!-- User Profile Card -->   
     <div class="frame-prof" id="draggable-prof" >
     <div class="center-prof">
         <a href="#" class="prof-close" ><span class="fas fa-times-circle" id="prof-close"></span></a>
@@ -201,49 +192,54 @@
                   <button class="btn-prof" id="logOut" onclick="logout()">LogOut</button>
                   <button class="btn-verify" onclick="verifyUser()">Verify</button>
               </div>
-          </div>
-          
-          
+          </div>         
     </div>
-  </div>
-
-
-
-
-
-<!-- End of profile card -->
-
-<!-- Picture Update -->
-
-<!-- Picture Update -->
-
-<!-- WorldStats -->
-
-<div class="worldstats" id="WorldStats">
-    <div class="stats-head">
-        <h1 class="countrystat-head" style="text-align: center; margin-bottom:-10%;">Search For Country</h1>
     </div>
+    <!-- End of profile card -->
 
-    <form class="search__container change-location my-4 text-center text-muted" id="form1">
-        
-        <input class="search__input form-control p-4" type="text" placeholder="Search" name="country">
-    </form>
-    <div id="Stats" class="cards-2">
-        <div class="container" id="details1">
-            <div class="row">
-                <div class="col-lg-12">
-                    
-               <hr class="title-divider"><h2>COUNTRY NAME</h2><hr class="title-divider">
-                    
+    <!-- WorldStats -->
+    <div class="worldstats" id="WorldStats">
+        <div class="stats-head">
+            <h1 class="countrystat-head" style="text-align: center; margin-bottom:-10%;">Search For Country</h1>
+        </div>
+
+        <form class="search__container change-location my-4 text-center text-muted" id="form1">
+            
+            <input class="search__input form-control p-4" type="text" placeholder="Search" name="country">
+        </form>
+        <div id="Stats" class="cards-2">
+            <div class="container" id="details1">
+                <div class="row">
+                    <div class="col-lg-12">
+                        
+                <hr class="title-divider"><h2>COUNTRY NAME</h2><hr class="title-divider">
+                        
+                    </div> 
                 </div> 
-            </div> 
-            <div class="row">
-                <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <!-- Card-->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">CASES</div>
+                                
+                                <hr class="cell-divide-hr">
+                                <div class="numbers">
+                                    <span class="value">N/A</span>
+                                
+                                </div>
+                                <hr class="cell-divide-hr">
+                                
+                                
+                            </div>
+                        </div> <!-- end of card -->
+                        <!-- end of card -->
 
                     <!-- Card-->
                     <div class="card">
                         <div class="card-body">
-                            <div class="card-title">CASES</div>
+                            <div class="card-title">ACTIVE</div>
                             
                             <hr class="cell-divide-hr">
                             <div class="numbers">
@@ -257,109 +253,42 @@
                     </div> <!-- end of card -->
                     <!-- end of card -->
 
-                   <!-- Card-->
-                   <div class="card">
-                    <div class="card-body">
-                        <div class="card-title">ACTIVE</div>
-                        
-                        <hr class="cell-divide-hr">
-                        <div class="numbers">
-                            <span class="value">N/A</span>
-                        
-                        </div>
-                        <hr class="cell-divide-hr">
-                        
-                        
-                    </div>
-                </div> <!-- end of card -->
-                <!-- end of card -->
-
-                   <!-- Card-->
-                   <div class="card">
-                    <div class="card-body">
-                        <div class="card-title">RECOVERED</div>
-                        
-                        <hr class="cell-divide-hr">
-                        <div class="numbers">
-                            <span class="value">N/A</span>
-                        
-                        </div>
-                        <hr class="cell-divide-hr">
-                        
-                        
-                    </div>
-                </div> <!-- end of card -->
-                <!-- end of card -->
-                <!-- Card-->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-title">DEATHS</div>
-                        
-                        <hr class="cell-divide-hr">
-                        <div class="numbers">
-                            <span class="value">N/A</span>
-                        
-                        </div>
-                        <hr class="cell-divide-hr">
-                        
-                        
-                    </div>
-                </div> <!-- end of card -->
-                <!-- end of card -->
-                <!-- Card-->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-title">TODAY+</div>
-                        
-                        <hr class="cell-divide-hr">
-                        <div class="numbers">
-                            <span class="value">N/A</span>
-                        
-                        </div>
-                        <hr class="cell-divide-hr">
-                        
-                        
-                    </div>
-                </div> <!-- end of card -->
-                <!-- end of card -->
-
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of cards-2 -->
-   
-</div>
-
-
-<!-- end of worldstats -->
-<hr style="width: 100%; height: 3px;">
-
-<div class="indiastats" id="IndiaStats">
-    <div class="stats-head">
-        <h1 class="countrystat-head" style="text-align: center;  margin-bottom:-10%;">Search For Indian State/City</h1>
-    </div>
-
-    <form class="search__container change-location my-4 text-center text-muted" id="form2">
-        
-        <input class="search__input form-control p-4" type="text" placeholder="Search" name="state">
-    </form>
-    <div class="cards-2">
-        <div class="container" id="details2">
-            <div class="row">
-                <div class="col-lg-12">
-                    
-                <hr class="title-divider"><h2>STATE/CITY NAME</h2><hr class="title-divider">
-                    
-                </div> 
-            </div> 
-            <div class="row">
-                <div class="col-lg-12">
-
                     <!-- Card-->
                     <div class="card">
                         <div class="card-body">
-                            <div class="card-title">CASES</div>
+                            <div class="card-title">RECOVERED</div>
+                            
+                            <hr class="cell-divide-hr">
+                            <div class="numbers">
+                                <span class="value">N/A</span>
+                            
+                            </div>
+                            <hr class="cell-divide-hr">
+                            
+                            
+                        </div>
+                    </div> <!-- end of card -->
+                    <!-- end of card -->
+                    <!-- Card-->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">DEATHS</div>
+                            
+                            <hr class="cell-divide-hr">
+                            <div class="numbers">
+                                <span class="value">N/A</span>
+                            
+                            </div>
+                            <hr class="cell-divide-hr">
+                            
+                            
+                        </div>
+                    </div> <!-- end of card -->
+                    <!-- end of card -->
+                    <!-- Card-->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">TODAY+</div>
                             
                             <hr class="cell-divide-hr">
                             <div class="numbers">
@@ -373,333 +302,385 @@
                     </div> <!-- end of card -->
                     <!-- end of card -->
 
-                   <!-- Card-->
-                   <div class="card">
-                    <div class="card-body">
-                        <div class="card-title">ACTIVE</div>
-                        
-                        <hr class="cell-divide-hr">
-                        <div class="numbers">
-                            <span class="value">N/A</span>
-                        
-                        </div>
-                        <hr class="cell-divide-hr">
-                        
-                        
-                    </div>
-                </div> <!-- end of card -->
-                <!-- end of card -->
 
-                   <!-- Card-->
-                   <div class="card">
-                    <div class="card-body">
-                        <div class="card-title">RECOVERED</div>
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of cards-2 -->
+    
+    </div>
+    <!-- end of worldstats -->
+    <hr style="width: 100%; height: 3px;">
+
+    <!--India Stats-->
+    <div class="indiastats" id="IndiaStats">
+        <div class="stats-head">
+            <h1 class="countrystat-head" style="text-align: center;  margin-bottom:-10%;">Search For Indian State/City</h1>
+        </div>
+
+        <form class="search__container change-location my-4 text-center text-muted" id="form2">
+            
+            <input class="search__input form-control p-4" type="text" placeholder="Search" name="state">
+        </form>
+        <div class="cards-2">
+            <div class="container" id="details2">
+                <div class="row">
+                    <div class="col-lg-12">
                         
-                        <hr class="cell-divide-hr">
-                        <div class="numbers">
-                            <span class="value">N/A</span>
+                    <hr class="title-divider"><h2>STATE/CITY NAME</h2><hr class="title-divider">
                         
+                    </div> 
+                </div> 
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <!-- Card-->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title">CASES</div>
+                                
+                                <hr class="cell-divide-hr">
+                                <div class="numbers">
+                                    <span class="value">N/A</span>
+                                
+                                </div>
+                                <hr class="cell-divide-hr">
+                                
+                                
+                            </div>
+                        </div> <!-- end of card -->
+                        <!-- end of card -->
+
+                    <!-- Card-->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">ACTIVE</div>
+                            
+                            <hr class="cell-divide-hr">
+                            <div class="numbers">
+                                <span class="value">N/A</span>
+                            
+                            </div>
+                            <hr class="cell-divide-hr">
+                            
+                            
                         </div>
-                        <hr class="cell-divide-hr">
-                        
-                        
-                    </div>
-                </div> <!-- end of card -->
-                <!-- end of card -->
-                <!-- Card-->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="card-title">DEATHS</div>
-                        
-                        <hr class="cell-divide-hr">
-                        <div class="numbers">
-                            <span class="value">N/A</span>
-                        
+                    </div> <!-- end of card -->
+                    <!-- end of card -->
+
+                    <!-- Card-->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">RECOVERED</div>
+                            
+                            <hr class="cell-divide-hr">
+                            <div class="numbers">
+                                <span class="value">N/A</span>
+                            
+                            </div>
+                            <hr class="cell-divide-hr">
+                            
+                            
                         </div>
-                        <hr class="cell-divide-hr">
-                        
-                        
-                    </div>
-                </div> <!-- end of card -->
-                <!-- end of card -->
+                    </div> <!-- end of card -->
+                    <!-- end of card -->
+                    <!-- Card-->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">DEATHS</div>
+                            
+                            <hr class="cell-divide-hr">
+                            <div class="numbers">
+                                <span class="value">N/A</span>
+                            
+                            </div>
+                            <hr class="cell-divide-hr">
+                            
+                            
+                        </div>
+                    </div> <!-- end of card -->
+                    <!-- end of card -->
+                    
+
+
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of cards-2 -->
+        <hr class="title-divider"><h3 style="text-align:center;">INDIAN COVID GRAPH</h3><hr class="title-divider">
+        <div class="india-graph">
+            <div id="chartcoontainer" style="height: 370px; width: 100%;"></div>
+        </div>
+
+        <section>
+            <!--for demo wrap-->
+            
+            <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                <tr>
+                    <th>State</th>
+                    <th>Cases</th>
+                    <th>Active</th>
+                    <th>Recovered</th>
+                    <th>Death</th>
+                </tr>
+                </thead>
+            </table>
+            </div>
+            <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody id="table-body">
                 
+                </tbody>
+            </table>
+            </div>
+        </section>
 
+    <!-- precautions -->
+        <div id="Precautions" class="basic-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>Precautions For Healthy Tomorrow</h2>
+                        <p class="p-heading p-large">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere modi repellendus recusandae, omnis doloremque temporibus voluptatibus inventore blanditiis, fuga non eius unde voluptate beatae facilis nulla provident! Cupiditate, animi beatae.</p>
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        
+                        <!-- precaution-label -->
+                        <div class="precaution-label">
+                            <div class="image-wrapper">
+                                <img class="img-fluid" src="images/mask.svg" alt="alternative">
+                            </div> <!-- end of image-wrapper -->
+                            <p class="p-large"><strong>Wear Mask</strong></p>
+                            <hr style="margin-top: 40px;">
+                            <p class="precaution-data">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique beatae alias ipsa atque, aspernatur molestiae iste impedit dolor, fugit ex sint sequi recusandae enim a? Quis corporis voluptatibus aspernatur facere.</p>
+                            
+                        </div> <!-- end of precaution-label -->
+                        <!-- end of precaution-label -->
 
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of cards-2 -->
-    <hr class="title-divider"><h3 style="text-align:center;">INDIAN COVID GRAPH</h3><hr class="title-divider">
-    <div class="india-graph">
-        <div id="chartcoontainer" style="height: 370px; width: 100%;"></div>
+                        <!-- precaution-label -->
+                        <div class="precaution-label">
+                            <div class="image-wrapper">
+                                <img class="img-fluid" src="images/wash.svg" alt="alternative">
+                            </div> <!-- end of image wrapper -->
+                            <p class="p-large"><strong>Always Wash Fruits And Vegetable</strong></p>
+                            <hr >
+                            <p class="precaution-data">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit adipisci ullam impedit tenetur quia maxime eligendi quis. Id reprehenderit repellat nisi consequatur cumque velit, culpa dolores temporibus totam. Numquam, rem?</p>
+                            
+                        </div> <!-- end of precaution-label -->
+                        <!-- end of precaution-label -->
+
+                        <!-- precaution-label -->
+                        <div class="precaution-label">
+                            <div class="image-wrapper">
+                                <img class="img-fluid" src="images/hand-wash.svg" alt="alternative">
+                            </div> <!-- end of image wrapper -->
+                            <p class="p-large"><strong>Wash Your Hands</strong></p>
+                            <hr style="margin-top: 40px;">
+                            <p class="precaution-data">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis placeat cum praesentium accusamus sint, aperiam velit dolores amet. Quod, dolores minima eaque veritatis earum debitis? Excepturi est aliquid aliquam ex.</p>
+                            
+                        </div> <!-- end of precaution-label -->
+                        <!-- end of precaution-label -->
+
+                        <!-- precaution-label -->
+                        <div class="precaution-label">
+                            <div class="image-wrapper">
+                                <img class="img-fluid" src="images/hand-use..svg" alt="alternative">
+                            </div> <!-- end of image wrapper -->
+                            <p class="p-large"><strong>Dont Use Palm For Rubbing Your Nose</strong></p>
+                            <hr>
+                            <p class="precaution-data">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, maiores natus modi eaque ad nulla quibusdam, alias repellendus pariatur totam incidunt mollitia sequi! Tempora itaque excepturi earum quod ipsam ullam.</p>
+                            
+                        </div> <!-- end of precaution-label -->
+                        <!-- end of precaution-label -->
+
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of basic-4 -->
+    <!-- end of precautions -->
+
     </div>
+    <!--end of India Stats-->
 
-    <section>
-        <!--for demo wrap-->
+    <!--Self Assessment-->
+    <div class="resp-container" id="selfTest">
+        <iframe class="resp-iframe" src="https://covidselfassesment.netlify.app/" gesture=""  allow="encrypted-media" allowfullscreen></iframe>
+    </div>
+    <!--ENd Of Self Assessment-->
+
+    <!--FAQ-->
+    <hr class="title-divider"><h3 style="text-align:center;">FREQUENTLY ASKED QUESTIONS</h3><hr class="title-divider">
+    <div class="faq" style="margin-top: 5%;">
+        <div class="wrap" id="FAQ">
         
-        <div class="tbl-header">
-          <table cellpadding="0" cellspacing="0" border="0">
-            <thead>
-              <tr>
-                <th>State</th>
-                <th>Cases</th>
-                <th>Active</th>
-                <th>Recovered</th>
-                <th>Death</th>
-              </tr>
-            </thead>
-          </table>
+            <ul class="accordion">
+                <li class="accordion__item">
+                    <a class="accordion__title" href="javascript:void(0)">What is COVID-19?
+                    <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
+                    </a>
+                    <p class="accordion__content">COVID-19 is the infectious disease caused by the most recently
+                        discovered corona virus. This new virus and disease were unknown
+                        before the outbreak began in Wuhan, China, in December 2019.</p></li>
+                <li class="accordion__item">
+                    <a class="accordion__title" href="javascript:void(0)">What are the symptoms of COVID-19?
+                    <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
+                    </a>
+                    <p class="accordion__content">The most common symptoms of COVID-19 are fever, tiredness, and
+                        dry cough. Some patients may have aches and pains, nasal
+                        congestion, runny nose, sore throat or diarrhea. These symptoms are
+                        usually mild and begin gradually. Some people become infected but
+                        don’t develop any symptoms and don't feel unwell. Most people
+                        (about 80%) recover from the disease without needing special
+                        treatment. Around 1 out of every 6 people who gets COVID-19
+                        becomes seriously ill and develops difficulty breathing. Older people,
+                        and those with underlying medical problems like high blood pressure,
+                        heart problems or diabetes, are more likely to develop serious illness.
+                        People with fever, cough and difficulty breathing should seek medical
+                        attention.</p></li>
+                <li class="accordion__item">
+                    <a class="accordion__title" href="javascript:void(0)">How does COVID-19 spread?
+                    <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
+                    </a>
+                    <p class="accordion__content">People can catch COVID-19 from others who have the virus. The
+                        disease can spread from person to person through small droplets from
+                        the nose or mouth which are spread when a person with COVID-19
+                        coughs or exhales. These droplets land on objects and surfaces
+                        around the person. Other people then catch COVID-19 by touching
+                        these objects or surfaces, then touching their eyes, nose or mouth.
+                        People can also catch COVID-19 if they breathe in droplets from a
+                        person with COVID-19 who coughs out or exhales droplets. This is
+                        why it is important to stay more than 1 meter (3 feet) away from a
+                        person who is sick.</p></li>
+                <li class="accordion__item">
+                    <a class="accordion__title" href="javascript:void(0)">Can the virus that causes COVID-19 be transmitted through the air?
+                    <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
+                    </a>
+                    <p class="accordion__content">Studies to date suggest that the virus that causes COVID-19 is mainly
+                        transmitted through contact with respiratory droplets rather than
+                        through the air. See previous answer on “How does COVID-19
+                        spread?”</p></li>
+                <li class="accordion__item">
+                    <a class="accordion__title" href="javascript:void(0)">What can I do to protect myself and prevent the spread of disease?
+                    <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
+                    </a>
+                    <p class="accordion__content">• Regularly and thoroughly clean your hands with an alcoholbased hand rub or wash them with soap and water.
+                        Why? Washing your hands with soap and water or using
+                        alcohol-based hand rub kills viruses that may be on your hands.
+                        <br><br>
+                        • Maintain at least 1 metre (3 feet) distance between yourself and
+                        anyone who is coughing or sneezing.
+                        Why? When someone coughs or sneezes they spray small liquid
+                        droplets from their nose or mouth which may contain virus. If you
+                        are too close, you can breathe in the droplets, including the
+                        COVID-19 virus if the person coughing has the disease.<br><br>
+                        • Avoid touching eyes, nose and mouth.
+                        Why? Hands touch many surfaces and can pick up viruses.
+                        Once contaminated, hands can transfer the virus to your eyes,
+                        nose or mouth. From there, the virus can enter your body and
+                        can make you sick.<br><br>
+                        • Make sure you, and the people around you, follow good
+                        respiratory hygiene. This means covering your mouth and nose
+                        with your bent elbow or tissue when you cough or sneeze. Then dispose of the used tissue immediately.
+                        Why? Droplets spread virus. By following good respiratory
+                        hygiene you protect the people around you from viruses such as
+                        cold, flu and COVID-19.<br><br>
+                        • Stay home if you feel unwell. If you have a fever, cough and
+                        difficulty breathing, seek medical attention and call in advance.
+                        Follow the directions of your local health authority.
+                        Why? National and local authorities will have the most up to date
+                        information on the situation in your area. Calling in advance will
+                        allow your health care provider to quickly direct you to the right
+                        health facility. This will also protect you and help prevent spread
+                        of viruses and other infections.<br><br>
+                        • Keep up to date on the latest COVID-19 hotspots (cities or local
+                        areas where COVID-19 is spreading widely). If possible, avoid
+                        traveling to places – especially if you are an older person or
+                        have diabetes, heart or lung disease.
+                        Why? You have a higher chance of catching COVID-19 in one of
+                        these areas.</p></li>
+                        <li class="accordion__item">
+                            <a class="accordion__title" href="javascript:void(0)">Is it safe to receive a package from any area where COVID-19 has been reported?
+                            <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
+                            </a>
+                            <p class="accordion__content">Yes. The likelihood of an infected person contaminating commercial
+                                goods is low and the risk of catching the virus that causes COVID-19
+                                from a package that has been moved, travelled, and exposed to
+                                different conditions and temperature is also low.</p></li>
+            </ul>
+            
         </div>
-        <div class="tbl-content">
-          <table cellpadding="0" cellspacing="0" border="0">
-            <tbody id="table-body">
-              
-            </tbody>
-          </table>
-        </div>
-      </section>
+    </div>
+    <!--End of FAQ-->
 
-<!-- precautions -->
-     <div id="Precautions" class="basic-4">
+    <!-- Footer -->
+    <div class="footer" id="About">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <h2>Precautions For Healthy Tomorrow</h2>
-                    <p class="p-heading p-large">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere modi repellendus recusandae, omnis doloremque temporibus voluptatibus inventore blanditiis, fuga non eius unde voluptate beatae facilis nulla provident! Cupiditate, animi beatae.</p>
+                <div class="col-md-4">
+                    <div class="footer-col">
+                        <h4>Team Members</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Mridul Setia</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Ajay Mittal</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    
-                    <!-- precaution-label -->
-                    <div class="precaution-label">
-                        <div class="image-wrapper">
-                            <img class="img-fluid" src="images/mask.svg" alt="alternative">
-                        </div> <!-- end of image-wrapper -->
-                        <p class="p-large"><strong>Wear Mask</strong></p>
-                        <hr style="margin-top: 40px;">
-                        <p class="precaution-data">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique beatae alias ipsa atque, aspernatur molestiae iste impedit dolor, fugit ex sint sequi recusandae enim a? Quis corporis voluptatibus aspernatur facere.</p>
+                <div class="col-md-4">
+                    <div class="footer-col middle">
+                        <h4>Credits</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Vector Source-<a class="turquoise" href="https://www.freepik.com/"> FreePik</a></div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col last">
+                        <h4>Social Media</h4>
+                        <span class="fa-stack">
+                            <a href="link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x"></i>
+                            </a>
+                        </span>
                         
-                    </div> <!-- end of precaution-label -->
-                    <!-- end of precaution-label -->
-
-                    <!-- precaution-label -->
-                    <div class="precaution-label">
-                        <div class="image-wrapper">
-                            <img class="img-fluid" src="images/wash.svg" alt="alternative">
-                        </div> <!-- end of image wrapper -->
-                        <p class="p-large"><strong>Always Wash Fruits And Vegetable</strong></p>
-                        <hr >
-                        <p class="precaution-data">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit adipisci ullam impedit tenetur quia maxime eligendi quis. Id reprehenderit repellat nisi consequatur cumque velit, culpa dolores temporibus totam. Numquam, rem?</p>
-                        
-                    </div> <!-- end of precaution-label -->
-                    <!-- end of precaution-label -->
-
-                    <!-- precaution-label -->
-                    <div class="precaution-label">
-                        <div class="image-wrapper">
-                            <img class="img-fluid" src="images/hand-wash.svg" alt="alternative">
-                        </div> <!-- end of image wrapper -->
-                        <p class="p-large"><strong>Wash Your Hands</strong></p>
-                        <hr style="margin-top: 40px;">
-                        <p class="precaution-data">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis placeat cum praesentium accusamus sint, aperiam velit dolores amet. Quod, dolores minima eaque veritatis earum debitis? Excepturi est aliquid aliquam ex.</p>
-                        
-                    </div> <!-- end of precaution-label -->
-                    <!-- end of precaution-label -->
-
-                    <!-- precaution-label -->
-                    <div class="precaution-label">
-                        <div class="image-wrapper">
-                            <img class="img-fluid" src="images/hand-use..svg" alt="alternative">
-                        </div> <!-- end of image wrapper -->
-                        <p class="p-large"><strong>Dont Use Palm For Rubbing Your Nose</strong></p>
-                        <hr>
-                        <p class="precaution-data">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, maiores natus modi eaque ad nulla quibusdam, alias repellendus pariatur totam incidunt mollitia sequi! Tempora itaque excepturi earum quod ipsam ullam.</p>
-                        
-                    </div> <!-- end of precaution-label -->
-                    <!-- end of precaution-label -->
-
+                        <span class="fa-stack">
+                            <a onclick="googleSignIn()">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div> 
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </div> <!-- end of basic-4 -->
-<!-- end of precautions -->
-
-</div>
-
-
-<div class="resp-container" id="selfTest">
-    <iframe class="resp-iframe" src="https://covidselfassesment.netlify.app/" gesture=""  allow="encrypted-media" allowfullscreen></iframe>
-</div>
-<hr class="title-divider"><h3 style="text-align:center;">FREQUENTLY ASKED QUESTIONS</h3><hr class="title-divider">
-<div class="faq" style="margin-top: 5%;">
-    <div class="wrap" id="FAQ">
-	
-        <ul class="accordion">
-            <li class="accordion__item">
-                <a class="accordion__title" href="javascript:void(0)">What is COVID-19?
-                <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
-                </a>
-                <p class="accordion__content">COVID-19 is the infectious disease caused by the most recently
-                    discovered corona virus. This new virus and disease were unknown
-                    before the outbreak began in Wuhan, China, in December 2019.</p></li>
-            <li class="accordion__item">
-                <a class="accordion__title" href="javascript:void(0)">What are the symptoms of COVID-19?
-                <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
-                </a>
-                <p class="accordion__content">The most common symptoms of COVID-19 are fever, tiredness, and
-                    dry cough. Some patients may have aches and pains, nasal
-                    congestion, runny nose, sore throat or diarrhea. These symptoms are
-                    usually mild and begin gradually. Some people become infected but
-                    don’t develop any symptoms and don't feel unwell. Most people
-                    (about 80%) recover from the disease without needing special
-                    treatment. Around 1 out of every 6 people who gets COVID-19
-                    becomes seriously ill and develops difficulty breathing. Older people,
-                    and those with underlying medical problems like high blood pressure,
-                    heart problems or diabetes, are more likely to develop serious illness.
-                    People with fever, cough and difficulty breathing should seek medical
-                    attention.</p></li>
-            <li class="accordion__item">
-                <a class="accordion__title" href="javascript:void(0)">How does COVID-19 spread?
-                <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
-                </a>
-                <p class="accordion__content">People can catch COVID-19 from others who have the virus. The
-                    disease can spread from person to person through small droplets from
-                    the nose or mouth which are spread when a person with COVID-19
-                    coughs or exhales. These droplets land on objects and surfaces
-                    around the person. Other people then catch COVID-19 by touching
-                    these objects or surfaces, then touching their eyes, nose or mouth.
-                    People can also catch COVID-19 if they breathe in droplets from a
-                    person with COVID-19 who coughs out or exhales droplets. This is
-                    why it is important to stay more than 1 meter (3 feet) away from a
-                    person who is sick.</p></li>
-            <li class="accordion__item">
-                <a class="accordion__title" href="javascript:void(0)">Can the virus that causes COVID-19 be transmitted through the air?
-                <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
-                </a>
-                <p class="accordion__content">Studies to date suggest that the virus that causes COVID-19 is mainly
-                    transmitted through contact with respiratory droplets rather than
-                    through the air. See previous answer on “How does COVID-19
-                    spread?”</p></li>
-            <li class="accordion__item">
-                <a class="accordion__title" href="javascript:void(0)">What can I do to protect myself and prevent the spread of disease?
-                <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
-                </a>
-                <p class="accordion__content">• Regularly and thoroughly clean your hands with an alcoholbased hand rub or wash them with soap and water.
-                    Why? Washing your hands with soap and water or using
-                    alcohol-based hand rub kills viruses that may be on your hands.
-                    <br><br>
-                    • Maintain at least 1 metre (3 feet) distance between yourself and
-                    anyone who is coughing or sneezing.
-                    Why? When someone coughs or sneezes they spray small liquid
-                    droplets from their nose or mouth which may contain virus. If you
-                    are too close, you can breathe in the droplets, including the
-                    COVID-19 virus if the person coughing has the disease.<br><br>
-                    • Avoid touching eyes, nose and mouth.
-                    Why? Hands touch many surfaces and can pick up viruses.
-                    Once contaminated, hands can transfer the virus to your eyes,
-                    nose or mouth. From there, the virus can enter your body and
-                    can make you sick.<br><br>
-                    • Make sure you, and the people around you, follow good
-                    respiratory hygiene. This means covering your mouth and nose
-                    with your bent elbow or tissue when you cough or sneeze. Then dispose of the used tissue immediately.
-                    Why? Droplets spread virus. By following good respiratory
-                    hygiene you protect the people around you from viruses such as
-                    cold, flu and COVID-19.<br><br>
-                    • Stay home if you feel unwell. If you have a fever, cough and
-                    difficulty breathing, seek medical attention and call in advance.
-                    Follow the directions of your local health authority.
-                    Why? National and local authorities will have the most up to date
-                    information on the situation in your area. Calling in advance will
-                    allow your health care provider to quickly direct you to the right
-                    health facility. This will also protect you and help prevent spread
-                    of viruses and other infections.<br><br>
-                    • Keep up to date on the latest COVID-19 hotspots (cities or local
-                    areas where COVID-19 is spreading widely). If possible, avoid
-                    traveling to places – especially if you are an older person or
-                    have diabetes, heart or lung disease.
-                    Why? You have a higher chance of catching COVID-19 in one of
-                    these areas.</p></li>
-                    <li class="accordion__item">
-                        <a class="accordion__title" href="javascript:void(0)">Is it safe to receive a package from any area where COVID-19 has been reported?
-                        <div class="bmenu x7"><span class="btop"></span><span class="bmid"></span><span class="bbot"></span></div>
-                        </a>
-                        <p class="accordion__content">Yes. The likelihood of an infected person contaminating commercial
-                            goods is low and the risk of catching the virus that causes COVID-19
-                            from a package that has been moved, travelled, and exposed to
-                            different conditions and temperature is also low.</p></li>
-        </ul>
-        
-    </div>
-</div>
-
-<!-- Footer -->
-<div class="footer" id="About">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="footer-col">
-                    <h4>Team Members</h4>
-                    <ul class="list-unstyled li-space-lg">
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body">Mridul Setia</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body">Ajay Mittal</div>
-                        </li>
-                    </ul>
-                </div>
-            </div> <!-- end of col -->
-            <div class="col-md-4">
-                <div class="footer-col middle">
-                    <h4>Credits</h4>
-                    <ul class="list-unstyled li-space-lg">
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body">Vector Source-<a class="turquoise" href="https://www.freepik.com/"> FreePik</a></div>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </div> <!-- end of col -->
-            <div class="col-md-4">
-                <div class="footer-col last">
-                    <h4>Social Media</h4>
-                    <span class="fa-stack">
-                        <a href="link">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-facebook-f fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="link">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-github fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    
-                    <span class="fa-stack">
-                        <a onclick="googleSignIn()">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-instagram fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="link">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-linkedin-in fa-stack-1x"></i>
-                        </a>
-                    </span>
-                </div> 
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of footer -->  
-<!-- end of footer -->
-
-   
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
 
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
      <!-- initialise firebase -->
@@ -715,8 +696,8 @@
     };
     firebase.initializeApp(config);
     </script>
-<!-- Scripts -->
-    
+
+    <!-- Scripts -->  
     <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
     <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
@@ -729,6 +710,7 @@
     <script src="js/indiagraph.js"></script>
     <script src="js/worldgraph.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--End of Acripts-->
     
 </body>
 </html>
