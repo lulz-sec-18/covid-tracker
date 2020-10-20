@@ -176,6 +176,7 @@ const updateDistrict = (data, Id) => {
    <td>${stateDets[Id].confirmed - known}</td>
    
  </tr>`;
+ document.querySelector('#District').style.display = "block";
 };
 
 const updateState = async (state) => {
