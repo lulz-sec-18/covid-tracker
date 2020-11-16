@@ -1,18 +1,23 @@
-const express = require('express')
-const path = require('path');
+const express = require('express');
+const http = require('http');
+
+//const path = require('path');
 const app = express();
-const router = express.Router();
-const port = process.env.port || 3000;
+//const router = express.Router();
+const port = process.env.port || 5000;
+const server = http.Server(app);
 
-router.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname+'/public/index.html'));
-});
+//app.use(express.static('public'));
 
-app.use('/', router);
+// router.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname+'/public/index.html'));
+// });
+
+//app.use('/', router);
 
 app.use(express.static(__dirname + '/public'));
 
-app.listen(port, err => {
+server.listen(port, err => {
     if (err) {
       return console.log("ERROR", err);
     }
